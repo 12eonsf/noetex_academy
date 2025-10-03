@@ -20,7 +20,6 @@ export default function Footer() {
       { name: 'Apply', href: '/apply' },
     ],
     support: [
-      { name: 'Contact', href: '/contact' },
       { name: 'FAQ', href: '/faq' },
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' },

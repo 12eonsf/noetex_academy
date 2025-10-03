@@ -113,10 +113,10 @@ export default function Faculty() {
                   Apply Now
                 </a>
                 <a
-                  href="/contact"
+                  href="/apply"
                   className="px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-semibold transition-all duration-300"
                 >
-                  Contact Us
+                  Learn More
                 </a>
               </div>
             </div>

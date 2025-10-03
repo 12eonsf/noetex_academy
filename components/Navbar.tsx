@@ -22,7 +22,6 @@ export default function Navbar() {
     { name: 'Faculty', href: '/faculty' },
     { name: 'Lab', href: '/lab' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
   ]
 
   return (

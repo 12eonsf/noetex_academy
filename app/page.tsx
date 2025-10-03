@@ -390,10 +390,10 @@ export default function Home() {
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
-                href="/contact"
+                href="/apply"
                 className="px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
               >
-                <span>Learn More</span>
+                <span>Apply Now</span>
                 <Brain className="h-5 w-5" />
               </Link>
             </div>
