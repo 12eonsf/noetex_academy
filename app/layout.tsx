@@ -1,0 +1,48 @@
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'Noetex Academy - Where Minds Meet the Future',
+  description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences. Join the next generation of interdisciplinary thinkers.',
+  keywords: 'neuroscience, AI, education, life sciences, social sciences, cognitive science, brain research',
+  authors: [{ name: 'Noetex Academy' }],
+  openGraph: {
+    title: 'Noetex Academy - Where Minds Meet the Future',
+    description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences.',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Noetex Academy - Where Minds Meet the Future',
+    description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences.',
+  },
+  viewport: 'width=device-width, initial-scale=1',
+  themeColor: '#0c0c0e',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" className="dark">
+      <body className={`${inter.className} bg-noetex-black text-white antialiased`}>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
+      </body>
+    </html>
+  )
+}
+
