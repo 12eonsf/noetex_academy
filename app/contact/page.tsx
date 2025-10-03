@@ -50,8 +50,7 @@ export default function Contact() {
   const socialLinks = [
     { name: 'Twitter', href: '#', icon: Twitter, color: 'text-blue-400' },
     { name: 'LinkedIn', href: '#', icon: Linkedin, color: 'text-blue-600' },
-    { name: 'GitHub', href: '#', icon: Github, color: 'text-gray-400' },
-    { name: 'WeChat', href: '#', icon: MessageCircle, color: 'text-green-400' }
+    { name: 'GitHub', href: '#', icon: Github, color: 'text-gray-400' }
   ]
 
   return (
@@ -122,7 +121,7 @@ export default function Contact() {
                   <QrCode className="h-16 w-16 text-indigo-400" />
                 </div>
                 <p className="text-center text-gray-400 text-sm mt-2">
-                  Scan to connect via WeChat
+                  Scan to connect with us
                 </p>
               </div>
             </div>
@@ -220,7 +219,7 @@ export default function Contact() {
             <h2 className="text-3xl font-bold text-center mb-12 gradient-text">
               Other Ways to Connect
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="glass-card p-6 text-center">
                 <MessageCircle className="h-12 w-12 text-indigo-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">Live Chat</h3>
@@ -230,14 +229,6 @@ export default function Contact() {
                 </button>
               </div>
               
-              <div className="glass-card p-6 text-center">
-                <MessageCircle className="h-12 w-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">WeChat</h3>
-                <p className="text-gray-300 mb-4">Connect with us on WeChat for updates</p>
-                <button className="px-6 py-3 rounded-lg bg-green-500/20 text-green-400 font-semibold hover:bg-green-500/30 transition-colors duration-200">
-                  Add Us
-                </button>
-              </div>
               
               <div className="glass-card p-6 text-center">
                 <QrCode className="h-12 w-12 text-purple-400 mx-auto mb-4" />
