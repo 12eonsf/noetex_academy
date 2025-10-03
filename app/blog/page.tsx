@@ -89,12 +89,7 @@ export default function Blog() {
       {/* Hero Section */}
       <Section className="bg-gradient-to-br from-noetex-black via-noetex-black to-noetex-indigo">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               Research <span className="gradient-text">Blog</span>
             </h1>
@@ -102,15 +97,10 @@ export default function Blog() {
               Insights, discoveries, and cutting-edge research from our faculty and researchers. 
               Stay updated with the latest developments in neuroscience, AI, and cognitive science.
             </p>
-          </motion.div>
+          </div>
 
           {/* Search and Filter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card p-6 mb-12"
-          >
+          <div className="glass-card p-6 mb-12 animate-fade-in-delay">
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -131,23 +121,16 @@ export default function Blog() {
                 </select>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Featured Post */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-16"
-          >
+          <div className="mb-16 animate-fade-in-delay-2">
             <h2 className="text-3xl font-bold mb-8 gradient-text">Featured Article</h2>
             {blogPosts.filter(post => post.featured).map((post, index) => (
-              <motion.div
+              <div
                 key={post.slug}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card p-8 neuron-glow"
+                className="glass-card p-8 neuron-glow animate-fade-in-delay"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div className="w-full h-64 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-xl flex items-center justify-center">
@@ -199,25 +182,19 @@ export default function Blog() {
                     </Link>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* All Posts */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
+          <div className="animate-fade-in-delay-3">
             <h2 className="text-3xl font-bold mb-8 gradient-text">Latest Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.filter(post => !post.featured).map((post, index) => (
-                <motion.article
+                <article
                   key={post.slug}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="glass-card p-6 hover:neuron-glow transition-all duration-300"
+                  className="glass-card p-6 hover:neuron-glow transition-all duration-300 animate-fade-in-delay"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="w-full h-48 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-lg flex items-center justify-center mb-4">
                     <div className="text-center">
@@ -259,18 +236,13 @@ export default function Blog() {
                     <span className="text-sm font-medium">Read More</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                </motion.article>
+                </article>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Newsletter Signup */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-16"
-          >
+          <div className="mt-16 animate-fade-in-delay-3">
             <div className="glass-card p-8 text-center neuron-glow">
               <h3 className="text-2xl font-bold mb-4 gradient-text">
                 Stay Updated with Our Research
@@ -289,7 +261,7 @@ export default function Blog() {
                 </button>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </Section>
     </div>

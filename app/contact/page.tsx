@@ -2,7 +2,7 @@
 
 import Section from '@/components/Section'
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle, QrCode, WeChat, Twitter, Linkedin, Github } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, QrCode, Twitter, Linkedin, Github } from 'lucide-react'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -51,7 +51,7 @@ export default function Contact() {
     { name: 'Twitter', href: '#', icon: Twitter, color: 'text-blue-400' },
     { name: 'LinkedIn', href: '#', icon: Linkedin, color: 'text-blue-600' },
     { name: 'GitHub', href: '#', icon: Github, color: 'text-gray-400' },
-    { name: 'WeChat', href: '#', icon: WeChat, color: 'text-green-400' }
+    { name: 'WeChat', href: '#', icon: MessageCircle, color: 'text-green-400' }
   ]
 
   return (
@@ -231,7 +231,7 @@ export default function Contact() {
               </div>
               
               <div className="glass-card p-6 text-center">
-                <WeChat className="h-12 w-12 text-green-400 mx-auto mb-4" />
+                <MessageCircle className="h-12 w-12 text-green-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">WeChat</h3>
                 <p className="text-gray-300 mb-4">Connect with us on WeChat for updates</p>
                 <button className="px-6 py-3 rounded-lg bg-green-500/20 text-green-400 font-semibold hover:bg-green-500/30 transition-colors duration-200">

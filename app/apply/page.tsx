@@ -67,12 +67,7 @@ export default function Apply() {
       <div className="min-h-screen pt-16">
         <Section className="bg-gradient-to-br from-noetex-black via-noetex-black to-noetex-indigo">
           <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-2xl mx-auto text-center glass-card p-12 neuron-glow"
-            >
+            <div className="max-w-2xl mx-auto text-center glass-card p-12 neuron-glow animate-fade-in">
               <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
               <h1 className="text-4xl font-bold mb-6 gradient-text">
                 Application Submitted!
@@ -101,7 +96,7 @@ export default function Apply() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </Section>
       </div>
@@ -113,12 +108,7 @@ export default function Apply() {
       {/* Hero Section */}
       <Section className="bg-gradient-to-br from-noetex-black via-noetex-black to-noetex-indigo">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               Apply to <span className="gradient-text">Noetex Academy</span>
             </h1>
@@ -126,15 +116,10 @@ export default function Apply() {
               Join the next generation of interdisciplinary thinkers. Tell us about yourself 
               and your goals, and we'll help you find the perfect program.
             </p>
-          </motion.div>
+          </div>
 
           {/* Application Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl mx-auto"
-          >
+          <div className="max-w-4xl mx-auto animate-fade-in-delay">
             <div className="glass-card p-8">
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Personal Information */}
@@ -338,11 +323,9 @@ export default function Apply() {
 
                 {/* Submit Button */}
                 <div className="pt-8">
-                  <motion.button
+                  <button
                     type="submit"
                     disabled={isSubmitting}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
                     className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                   >
                     {isSubmitting ? (
@@ -356,11 +339,11 @@ export default function Apply() {
                         <span>Submit Application</span>
                       </>
                     )}
-                  </motion.button>
+                  </button>
                 </div>
               </form>
             </div>
-          </motion.div>
+          </div>
         </div>
       </Section>
     </div>
