@@ -144,6 +144,15 @@ export default function Home() {
       image: "/faculty/alireza-soltani.jpg",
       specialties: ["Computational Neuroscience", "Cognitive Neuroscience", "Decision-Making", "Learning"],
       website: "https://dartmouth.edu/~asoltani"
+    },
+    {
+      name: "Dr. Andrea Luppi",
+      title: "Wellcome Early Career Fellow and Fellow of St John's College",
+      institution: "University of Cambridge",
+      bio: "A philosopher-turned-neuroscientist whose research combines information theory, network science, and computational modelling to uncover how brain structure and dynamics give rise to consciousness and intelligence across species, states, and systems.",
+      image: "/faculty/andrea-luppi.jpg",
+      specialties: ["Artificial Neural Network", "Computational Neuroscience", "Information Theory"],
+      website: "https://www.cam.ac.uk"
     }
   ]
 
@@ -346,7 +355,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
-              Meet Our <span className="gradient-text">Faculty</span>
+              Meet Our <span className="gradient-text">Faculty & Speakers</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-futura-1">
               Learn from world-renowned experts who are pushing the boundaries of human knowledge.
