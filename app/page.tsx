@@ -394,11 +394,14 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Sliding NOETEX ACADEMY Text */}
+      {/* Sliding NOETEX SOCIETY Text - Infinite Loop */}
       <div className="relative overflow-hidden bg-noetex-black py-16">
-        <div className="animate-slide-left">
-          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent select-none whitespace-nowrap" style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.4)' }}>
-            NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY
+        <div className="flex animate-slide-left">
+          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent select-none whitespace-nowrap flex-shrink-0" style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.4)' }}>
+            NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY
+          </h1>
+          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent select-none whitespace-nowrap flex-shrink-0 ml-8" style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.4)' }}>
+            NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY
           </h1>
         </div>
       </div>
