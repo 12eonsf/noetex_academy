@@ -124,7 +124,7 @@ export default function Lab() {
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">Interactive Lab Demo</h3>
                     <p className="text-gray-400 mb-4">Experience our research tools</p>
-                    <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center space-x-2 mx-auto">
+                    <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center space-x-2 mx-auto">
                       <Play className="h-4 w-4" />
                       <span>Launch Demo</span>
                     </button>
@@ -150,7 +150,7 @@ export default function Lab() {
                     <div className={`w-12 h-12 bg-gradient-to-r ${tool.color} rounded-lg flex items-center justify-center`}>
                       <tool.icon className="h-6 w-6 text-white" />
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    <span className={`px-3 py-1 rounded-full text-xs font-futura-1 font-semibold ${
                       tool.status === 'Available' ? 'bg-green-500/20 text-green-400' :
                       tool.status === 'Beta' ? 'bg-yellow-500/20 text-yellow-400' :
                       tool.status === 'Coming Soon' ? 'bg-blue-500/20 text-blue-400' :
@@ -196,8 +196,8 @@ export default function Lab() {
                   <h3 className="text-xl font-bold text-white mb-3">{area.title}</h3>
                   <p className="text-gray-400 text-sm mb-4 leading-relaxed">{area.description}</p>
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-indigo-400 font-semibold">{area.metrics}</span>
-                    <span className="text-purple-400 font-semibold">{area.impact}</span>
+                    <span className="text-indigo-400 font-futura-1 font-semibold">{area.metrics}</span>
+                    <span className="text-purple-400 font-futura-1 font-semibold">{area.impact}</span>
                   </div>
                 </div>
               ))}
@@ -215,11 +215,11 @@ export default function Lab() {
                 to groundbreaking discoveries in cognitive science and AI.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center space-x-2">
+                <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center space-x-2">
                   <Download className="h-4 w-4" />
                   <span>Download Research Kit</span>
                 </button>
-                <button className="px-6 py-3 rounded-lg glass-card glass-card-hover text-white font-semibold transition-all duration-300 flex items-center space-x-2">
+                <button className="px-6 py-3 rounded-lg glass-card glass-card-hover text-white font-futura-1 font-semibold transition-all duration-300 flex items-center space-x-2">
                   <Users className="h-4 w-4" />
                   <span>Join Research Network</span>
                 </button>

@@ -69,7 +69,7 @@ export default function CourseCard({
               {isPastProgram ? (
                 // Past Program: Title on cover with black gradient overlay
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4">
-                  <h3 className="text-white text-lg font-bold leading-tight">
+                  <h3 className="text-white text-lg font-futura-1 font-bold leading-tight">
                     {title}
                   </h3>
                 </div>
@@ -108,7 +108,7 @@ export default function CourseCard({
           {/* Course Header */}
           <div className="mb-4">
             {!isPastProgram && (
-              <h3 className="text-xl font-heading text-white mb-2">
+              <h3 className="text-xl font-futura-1 text-white mb-2">
                 {title}
               </h3>
             )}

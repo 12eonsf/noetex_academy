@@ -47,7 +47,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 relative group"
+                className="text-gray-300 hover:text-white transition-colors duration-200 relative group font-brand-3"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300" />
@@ -80,7 +80,7 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 py-2"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 py-2 font-brand-3"
                 >
                   {item.name}
                 </Link>

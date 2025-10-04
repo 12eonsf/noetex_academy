@@ -84,13 +84,13 @@ export default function Apply() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                   <a
                     href="/programs"
-                    className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300"
+                    className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300"
                   >
                     Explore Programs
                   </a>
                   <a
                     href="/faculty"
-                    className="px-6 py-3 rounded-lg glass-card glass-card-hover text-white font-semibold transition-all duration-300"
+                    className="px-6 py-3 rounded-lg glass-card glass-card-hover text-white font-futura-1 font-semibold transition-all duration-300"
                   >
                     Meet Faculty
                   </a>
@@ -326,7 +326,7 @@ export default function Apply() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                    className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                   >
                     {isSubmitting ? (
                       <>

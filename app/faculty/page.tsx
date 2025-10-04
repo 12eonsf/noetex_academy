@@ -108,13 +108,13 @@ export default function Faculty() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/apply"
-                  className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300"
+                  className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300"
                 >
                   Apply Now
                 </a>
                 <a
                   href="/apply"
-                  className="px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-semibold transition-all duration-300"
+                  className="px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-futura-1 font-semibold transition-all duration-300"
                 >
                   Learn More
                 </a>
