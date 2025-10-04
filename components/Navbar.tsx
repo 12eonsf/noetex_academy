@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Menu, X, Brain, AlignJustify } from 'lucide-react'
 
 export default function Navbar() {
@@ -35,18 +34,9 @@ export default function Navbar() {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Brand */}
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
-            <div className="flex items-center space-x-3 hover:scale-105 transition-transform duration-200">
-              <Image 
-                src="/logo.svg" 
-                alt="Noetex Academy Logo" 
-                width={32} 
-                height={32}
-                className="h-6 w-6 sm:h-8 sm:w-8"
-              />
-              <span className="text-lg sm:text-xl font-heading font-bold gradient-text">Noetex Academy</span>
-            </div>
+            <span className="text-lg sm:text-xl font-heading font-bold gradient-text">Noetex Academy</span>
           </Link>
 
           {/* Desktop Navigation */}
