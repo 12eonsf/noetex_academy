@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Orbitron, Space_Grotesk, Audiowide, Major_Mono_Display } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
@@ -11,6 +11,7 @@ const audiowide = Audiowide({ subsets: ['latin'], weight: '400', variable: '--fo
 const majorMono = Major_Mono_Display({ subsets: ['latin'], weight: '400', variable: '--font-major-mono' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://noetex-academy.vercel.app'),
   title: 'Noetex Academy - Where Minds Meet the Future',
   description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences. Join the next generation of interdisciplinary thinkers.',
   keywords: 'neuroscience, AI, education, life sciences, social sciences, cognitive science, brain research',
@@ -20,13 +21,19 @@ export const metadata: Metadata = {
     description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://noetex-academy.vercel.app',
+    siteName: 'Noetex Academy',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Noetex Academy - Where Minds Meet the Future',
     description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences.',
   },
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#0c0c0e',
 }
 

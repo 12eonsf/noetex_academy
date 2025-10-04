@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Brain, AlignJustify } from 'lucide-react'
 import dynamic from 'next/dynamic'
+import ErrorBoundary from './ErrorBoundary'
 
 const Brain3D = dynamic(() => import('./Brain3D'), { 
   ssr: false,
@@ -16,7 +17,9 @@ export default function Hero() {
       
       {/* 3D Brain Background - Desktop: Right side, Mobile: Full screen */}
       <div className="absolute inset-0 w-full h-full z-0 lg:right-0 lg:w-1/2 lg:left-auto">
-        <Brain3D />
+        <ErrorBoundary>
+          <Brain3D />
+        </ErrorBoundary>
       </div>
 
 

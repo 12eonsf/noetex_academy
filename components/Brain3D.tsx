@@ -273,6 +273,9 @@ function BrainScene() {
           dpr={[1, 2]}
           performance={{ min: 0.5 }}
           style={{ background: 'transparent' }}
+          onError={(error) => {
+            console.error('Canvas error:', error)
+          }}
         >
           <ambientLight intensity={0.2} />
           <pointLight position={[3, 3, 2]} intensity={40} color="#4a55b1" distance={10} decay={2} />
