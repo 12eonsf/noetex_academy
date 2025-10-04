@@ -109,7 +109,7 @@ function BrainShell({
 }
 
 
-function SparklingParticles({ count = 120, radius = 1.1 }) {
+function SparklingParticles({ count = 80, radius = 1.1 }) {
   const ref = useRef<THREE.Points>(null)
   const uniforms = useMemo(() => ({ 
     uTime: { value: 0 }
@@ -120,20 +120,26 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
     const sizes = new Float32Array(count)
     const colors = new Float32Array(count * 3)
     
-    // Color palette for different colored particles
-    const colorPalette = [
-      [0.8, 0.4, 1.0], // Purple
-      [0.4, 0.8, 1.0], // Blue
-      [1.0, 0.6, 0.8], // Pink
-      [0.6, 1.0, 0.8], // Cyan
-      [1.0, 0.8, 0.4], // Orange
-      [0.8, 1.0, 0.4], // Yellow
-    ]
+        // Galaxy color palette - more cosmic and diverse
+        const colorPalette = [
+          [0.9, 0.3, 0.9], // Deep Purple
+          [0.2, 0.6, 1.0], // Electric Blue
+          [1.0, 0.4, 0.6], // Hot Pink
+          [0.3, 0.9, 0.9], // Cyan
+          [1.0, 0.7, 0.2], // Golden Orange
+          [0.8, 1.0, 0.3], // Lime Green
+          [0.6, 0.2, 0.8], // Deep Violet
+          [0.1, 0.8, 0.4], // Emerald
+          [1.0, 0.2, 0.4], // Crimson
+          [0.4, 0.3, 0.9], // Indigo
+          [0.9, 0.8, 0.1], // Gold
+          [0.7, 0.1, 0.9], // Magenta
+        ]
     
     for (let i = 0; i < count; i++) {
       const v = new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * radius)
       pos.set([v.x, v.y, v.z], i * 3)
-      sizes[i] = Math.random() * 0.25 + 0.1 // Larger sizes between 0.1 and 0.35
+      sizes[i] = Math.random() * 0.3 + 0.05 // Galaxy star sizes between 0.05 and 0.35
       
       // Assign random color from palette
       const colorIndex = Math.floor(Math.random() * colorPalette.length)
@@ -188,7 +194,7 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
                 vPosition = position;
                 vColor = color;
                 
-                vAlpha = 0.7 + 0.3 * sin(uTime * 2.0 + position.y * 10.0);
+                vAlpha = 0.4 + 0.6 * sin(uTime * 1.5 + position.y * 8.0 + position.x * 3.0);
                 
                 vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
                 gl_PointSize = size * (400.0 / -mvPosition.z);
@@ -215,7 +221,7 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
   )
 }
 
-function Particles({ count = 400, radius = 1.2 }) {
+function Particles({ count = 200, radius = 1.2 }) {
   const ref = useRef<THREE.Points>(null)
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3)
@@ -241,10 +247,10 @@ function Particles({ count = 400, radius = 1.2 }) {
         />
       </bufferGeometry>
       <pointsMaterial 
-        size={0.04} 
-        color={"#8b5cf6"} 
+        size={0.03} 
+        color={"#4a55b1"} 
         transparent 
-        opacity={0.8} 
+        opacity={0.6} 
         depthWrite={false} 
       />
     </points>
