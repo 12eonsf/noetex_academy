@@ -11,6 +11,7 @@ interface MentorCardProps {
   image: string
   specialties: string[]
   website?: string
+  role?: string
 }
 
 export default function MentorCard({
@@ -20,7 +21,8 @@ export default function MentorCard({
   bio,
   image,
   specialties,
-  website
+  website,
+  role
 }: MentorCardProps) {
   return (
     <div className="group hover:-translate-y-2 hover:scale-105 transition-all duration-300">
@@ -49,9 +51,16 @@ export default function MentorCard({
           </div>
           
           <div className="flex-1">
-            <h3 className="text-lg font-bold text-white group-hover:gradient-text transition-all duration-300">
-              {name}
-            </h3>
+            <div className="flex items-center justify-between mb-1">
+              <h3 className="text-lg font-bold text-white group-hover:gradient-text transition-all duration-300">
+                {name}
+              </h3>
+              {role && (
+                <span className="px-2 py-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold rounded-full">
+                  {role}
+                </span>
+              )}
+            </div>
             <p className="text-indigo-400 font-medium">{title}</p>
             <div className="flex items-center space-x-1 text-sm text-gray-400 mt-1">
               <GraduationCap className="h-4 w-4" />

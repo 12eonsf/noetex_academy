@@ -143,7 +143,8 @@ export default function Home() {
       bio: "Leading researcher in computational and cognitive neuroscience, focusing on adaptive decision-making and learning by integrating computational modeling, psychophysics, and human behavior studies to uncover neural mechanisms and bridge cognitive processes with their biophysical foundations.",
       image: "/faculty/alireza-soltani.jpg",
       specialties: ["Computational Neuroscience", "Cognitive Neuroscience", "Decision-Making", "Learning"],
-      website: "https://dartmouth.edu/~asoltani"
+      website: "https://dartmouth.edu/~asoltani",
+      role: "Instructor"
     },
     {
       name: "Dr. Andrea Luppi",
@@ -151,8 +152,9 @@ export default function Home() {
       institution: "University of Cambridge",
       bio: "A philosopher-turned-neuroscientist whose research combines information theory, network science, and computational modelling to uncover how brain structure and dynamics give rise to consciousness and intelligence across species, states, and systems.",
       image: "/faculty/andrea-luppi.jpg",
-      specialties: ["Artificial Neural Network", "Computational Neuroscience", "Information Theory"],
-      website: "https://www.cam.ac.uk"
+      specialties: ["Artificial Neural Network", "Computational Neuroscience", "Information Theory", "Consciousness"],
+      website: "https://www.cam.ac.uk",
+      role: "Speaker"
     }
   ]
 
@@ -355,7 +357,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
-              Meet Our <span className="gradient-text">Faculty & Speakers</span>
+              Meet the Minds <span className="gradient-text">Thinking with Us</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-futura-1">
               Learn from world-renowned experts who are pushing the boundaries of human knowledge.
