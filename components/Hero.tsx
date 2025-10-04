@@ -2,10 +2,16 @@
 
 import Link from 'next/link'
 import { ArrowRight, Brain } from 'lucide-react'
+import Brain3D from './Brain3D'
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-noetex-black via-noetex-black to-noetex-indigo overflow-hidden">
+      
+      {/* 3D Brain Background */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Brain3D />
+      </div>
 
       {/* Main Content */}
       <div className="relative z-10 container-custom min-h-screen flex items-end justify-center lg:justify-start px-4 sm:px-6 lg:px-8 pb-16 lg:pb-0 lg:items-center">
