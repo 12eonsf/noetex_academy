@@ -13,8 +13,8 @@ export default function Hero() {
         <Brain3D />
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 container-custom min-h-screen flex items-end justify-center lg:justify-start px-4 sm:px-6 lg:px-8 pb-16 lg:pb-0 lg:items-center">
+      {/* Main Content - Same background as 3D brain */}
+      <div className="relative z-10 container-custom min-h-screen flex items-end justify-center lg:justify-start px-4 sm:px-6 lg:px-8 pb-16 lg:pb-0 lg:items-center bg-gradient-to-br from-noetex-black via-noetex-black to-noetex-indigo">
         <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0 w-full lg:max-w-2xl lg:pr-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading leading-tight animate-fade-in mb-6 sm:mb-8 px-2">
             Learning Across

@@ -109,9 +109,12 @@ function BrainShell({
 }
 
 
-function SparklingParticles({ count = 120, radius = 1.1 }) {
+function SparklingParticles({ count = 120, radius = 1.1, mousePosition = { x: 0, y: 0 } }) {
   const ref = useRef<THREE.Points>(null)
-  const uniforms = useMemo(() => ({ uTime: { value: 0 } }), [])
+  const uniforms = useMemo(() => ({ 
+    uTime: { value: 0 },
+    uMouse: { value: new THREE.Vector2(0, 0) }
+  }), [])
   
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3)
@@ -131,7 +134,7 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
     for (let i = 0; i < count; i++) {
       const v = new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * radius)
       pos.set([v.x, v.y, v.z], i * 3)
-      sizes[i] = Math.random() * 0.08 + 0.02 // Larger sizes between 0.02 and 0.1
+      sizes[i] = Math.random() * 0.15 + 0.05 // Much larger sizes between 0.05 and 0.2
       
       // Assign random color from palette
       const colorIndex = Math.floor(Math.random() * colorPalette.length)
@@ -147,6 +150,7 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
       ref.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.01) * 0.1
     }
     uniforms.uTime.value = clock.getElapsedTime()
+    uniforms.uMouse.value.set(mousePosition.x, mousePosition.y)
   })
 
   return (
@@ -180,24 +184,43 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
           attribute vec3 color;
           varying float vAlpha;
           varying vec3 vColor;
+          varying vec3 vPosition;
           uniform float uTime;
+          uniform vec2 uMouse;
           void main() {
-            vAlpha = 0.5 + 0.5 * sin(uTime * 2.0 + position.y * 10.0);
+            vPosition = position;
             vColor = color;
+            
+            // Mouse interaction effect
+            vec3 mouseInfluence = vec3(uMouse.x, uMouse.y, 0.0) * 0.3;
+            float mouseDistance = distance(position, mouseInfluence);
+            float mouseEffect = 1.0 - smoothstep(0.0, 2.0, mouseDistance);
+            
+            vAlpha = (0.7 + 0.3 * sin(uTime * 2.0 + position.y * 10.0)) * (1.0 + mouseEffect * 0.5);
+            
             vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-            gl_PointSize = size * (300.0 / -mvPosition.z);
+            gl_PointSize = size * (400.0 / -mvPosition.z) * (1.0 + mouseEffect * 0.3);
             gl_Position = projectionMatrix * mvPosition;
           }
         `}
         fragmentShader={`
           varying float vAlpha;
           varying vec3 vColor;
+          varying vec3 vPosition;
           uniform float uTime;
+          uniform vec2 uMouse;
           void main() {
             float dist = distance(gl_PointCoord, vec2(0.5));
-            float alpha = 1.0 - smoothstep(0.0, 0.5, dist);
+            float alpha = 1.0 - smoothstep(0.0, 0.4, dist);
             alpha *= vAlpha;
-            gl_FragColor = vec4(vColor, alpha);
+            
+            // Mouse glow effect
+            vec3 mouseInfluence = vec3(uMouse.x, uMouse.y, 0.0) * 0.3;
+            float mouseDistance = distance(vPosition, mouseInfluence);
+            float mouseGlow = 1.0 - smoothstep(0.0, 1.5, mouseDistance);
+            
+            vec3 finalColor = vColor + vec3(mouseGlow * 0.3);
+            gl_FragColor = vec4(finalColor, alpha);
           }
         `}
         uniforms={uniforms}
@@ -243,21 +266,44 @@ function Particles({ count = 400, radius = 1.2 }) {
 }
 
 function BrainScene() {
+  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 })
+  
+  const handleMouseMove = (event: React.MouseEvent) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const x = (event.clientX - rect.left) / rect.width * 2 - 1
+    const y = -(event.clientY - rect.top) / rect.height * 2 + 1
+    setMousePosition({ x, y })
+  }
+  
+  const handleTouchMove = (event: React.TouchEvent) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const touch = event.touches[0]
+    const x = (touch.clientX - rect.left) / rect.width * 2 - 1
+    const y = -(touch.clientY - rect.top) / rect.height * 2 + 1
+    setMousePosition({ x, y })
+  }
+  
   return (
-    <Canvas camera={{ position: [0, 0, 4], fov: 40 }}>
-      <color attach="background" args={["#0c0c0e"]} />
-      <fog attach="fog" args={["#0c0c0e", 6, 12]} />
-      <ambientLight intensity={0.2} />
-      <pointLight position={[3, 3, 2]} intensity={40} color="#4a55b1" distance={10} decay={2} />
-      <pointLight position={[-3, -2, 2]} intensity={26} color="#7c3aed" distance={10} decay={2} />
-      <group rotation={[0.1, 0.6, 0]}>
-        <BrainShell noiseAmp={0.22} />
-        <SparklingParticles count={150} />
-        <Particles />
-      </group>
-      <OrbitControls enablePan={false} minDistance={3} maxDistance={6} />
-      <Environment preset="night" />
-    </Canvas>
+    <div 
+      className="w-full h-full"
+      onMouseMove={handleMouseMove}
+      onTouchMove={handleTouchMove}
+    >
+      <Canvas camera={{ position: [0, 0, 4], fov: 40 }}>
+        <color attach="background" args={["#0c0c0e"]} />
+        <fog attach="fog" args={["#0c0c0e", 6, 12]} />
+        <ambientLight intensity={0.2} />
+        <pointLight position={[3, 3, 2]} intensity={40} color="#4a55b1" distance={10} decay={2} />
+        <pointLight position={[-3, -2, 2]} intensity={26} color="#7c3aed" distance={10} decay={2} />
+        <group rotation={[0.1, 0.6, 0]}>
+          <BrainShell noiseAmp={0.22} />
+          <SparklingParticles count={150} mousePosition={mousePosition} />
+          <Particles />
+        </group>
+        <OrbitControls enablePan={false} minDistance={3} maxDistance={6} />
+        <Environment preset="night" />
+      </Canvas>
+    </div>
   )
 }
 
