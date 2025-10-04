@@ -41,10 +41,10 @@ export default function Hero() {
               {/* Left line */}
               <div className="flex-1 lg:flex-none lg:w-16 h-px bg-gradient-to-r from-indigo-400 to-purple-400"></div>
               
-              {/* Button */}
+              {/* Text Link */}
               <Link
                 href="/programs"
-                className="group px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base"
+                className="group text-white font-futura-1 font-semibold hover:text-indigo-400 transition-colors duration-300 flex items-center space-x-2 text-sm sm:text-base"
               >
                 <span>Explore Programs</span>
                 <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
