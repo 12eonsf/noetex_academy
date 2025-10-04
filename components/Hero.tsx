@@ -16,7 +16,7 @@ export default function Hero() {
             <span className="gradient-text font-display">Minds and Machines</span>
           </h1>
           
-          <p className="text-lg sm:text-xl text-gray-300 leading-relaxed animate-fade-in-delay mb-8 sm:mb-12 px-4 text-futura">
+          <p className="text-lg sm:text-xl text-gray-300 leading-relaxed animate-fade-in-delay mb-8 sm:mb-12 px-4 font-futura">
             Neuroscience. AI. Life Sciences. Social Sciences.
             <br />
             Join the next generation of interdisciplinary thinkers.
