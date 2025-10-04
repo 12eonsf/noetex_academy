@@ -23,7 +23,8 @@ export default function Home() {
       location: "Zoom",
       coverImage: "/courses/neuroscience-decision-making.JPG",
       instructor: "Faculty from: Dartmouth College, University College London",
-      hours: "24.5 Hours"
+      hours: "24.5 Hours",
+      type: "Course"
     },
     {
       title: "Neuroscience Winter School",
@@ -40,7 +41,8 @@ export default function Home() {
       location: "Cambridge, London, Oxford",
       coverImage: "/courses/neuroscience-winter-school.jpg",
       instructor: "Faculty from: University of Cambridge, University of Oxford",
-      hours: "35 Hours"
+      hours: "35 Hours",
+      type: "School"
     }
   ]
 
@@ -57,7 +59,8 @@ export default function Home() {
       startDate: "August 24, 2025",
       location: "Cambridge",
       coverImage: "/courses/cognitive-control.jpg",
-      instructor: "Faculty from: University of Cambridge"
+      instructor: "Faculty from: University of Cambridge",
+      type: "Course"
     },
     {
       title: "Cognitive Algorithms and Neural Mechanisms of Economic Games",
@@ -70,7 +73,8 @@ export default function Home() {
       startDate: "August 24, 2025",
       location: "London",
       coverImage: "/courses/economic-games.jpg",
-      instructor: "Faculty from: University College London"
+      instructor: "Faculty from: University College London",
+      type: "Course"
     },
     {
       title: "London Brain and Intelligence Summit",
@@ -83,7 +87,8 @@ export default function Home() {
       startDate: "August 23, 2025",
       location: "King's College London",
       coverImage: "/courses/brain-summit.jpg",
-      instructor: "Speakers from: University of Cambridge, University of Oxford, Peking University, King's College London"
+      instructor: "Speakers from: University of Cambridge, University of Oxford, Peking University, King's College London",
+      type: "Conference"
     }
   ]
 

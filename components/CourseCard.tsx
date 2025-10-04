@@ -22,6 +22,7 @@ interface CourseCardProps {
   instructor?: string
   hours?: string
   isPastProgram?: boolean
+  type?: string
 }
 
 export default function CourseCard({
@@ -41,7 +42,8 @@ export default function CourseCard({
   coverImage,
   instructor,
   hours,
-  isPastProgram = false
+  isPastProgram = false,
+  type
 }: CourseCardProps) {
   return (
     <div
@@ -107,6 +109,14 @@ export default function CourseCard({
 
           {/* Course Header */}
           <div className="mb-4">
+            {/* Type Badge */}
+            {type && (
+              <div className="mb-2">
+                <span className="inline-block px-3 py-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold rounded-full font-futura-1">
+                  {type}
+                </span>
+              </div>
+            )}
             {!isPastProgram && (
               <h3 className="text-xl font-futura-1 text-white mb-2">
                 {title}
