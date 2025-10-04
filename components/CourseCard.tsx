@@ -96,7 +96,7 @@ export default function CourseCard({
                   {/* Completed Badge for Past Programs - on cover image */}
                   {isPastProgram && (
                     <div className="absolute top-3 right-3">
-                      <div className="bg-transparent border border-blue-400 text-white px-3 py-1.5 rounded-lg relative overflow-hidden inline-block">
+                      <div className="bg-transparent border border-blue-400 text-white px-2 py-1 rounded-lg relative overflow-hidden inline-block">
                         {/* Blue glow effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-lg -z-10" />
                         {/* Text shadow for better readability */}
