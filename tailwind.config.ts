@@ -13,6 +13,7 @@ const config: Config = {
         'heading': ['Orbitron', 'Inter', 'system-ui', 'sans-serif'],
         'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
         'display': ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+        'body': ['Lato', 'Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         'noetex-black': '#0c0c0e',

@@ -133,7 +133,7 @@ export default function Home() {
       <Section id="about" className="bg-gradient-to-b from-noetex-black to-noetex-black/50">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Redefining <span className="gradient-text">Education</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -168,7 +168,7 @@ export default function Home() {
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
                   <item.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                <h3 className="text-xl font-heading mb-4">{item.title}</h3>
                 <p className="text-gray-300">{item.description}</p>
               </div>
             ))}
@@ -180,7 +180,7 @@ export default function Home() {
       <Section id="programs" className="bg-gradient-to-b from-noetex-black/50 to-noetex-black">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Featured <span className="gradient-text">Programs</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -216,7 +216,7 @@ export default function Home() {
       <Section className="bg-gradient-to-b from-noetex-black to-noetex-black/50">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Past <span className="gradient-text">Programs</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -242,7 +242,7 @@ export default function Home() {
       <Section className="bg-gradient-to-b from-noetex-black to-noetex-indigo/20">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Why Choose <span className="gradient-text">Noetex Academy</span>
             </h2>
           </div>
@@ -273,18 +273,18 @@ export default function Home() {
                 <div className="w-24 h-24 mx-auto bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full flex items-center justify-center">
                   <Award className="h-12 w-12 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold gradient-text">95% Success Rate</h3>
+                <h3 className="text-2xl font-heading gradient-text">95% Success Rate</h3>
                 <p className="text-gray-300">
                   Our graduates go on to work at leading tech companies, research institutions, 
                   and start their own innovative ventures.
                 </p>
                 <div className="grid grid-cols-2 gap-4 pt-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-indigo-400">500+</div>
+                    <div className="text-2xl font-heading text-indigo-400">500+</div>
                     <div className="text-sm text-gray-400">Alumni</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400">50+</div>
+                    <div className="text-2xl font-heading text-purple-400">50+</div>
                     <div className="text-sm text-gray-400">Countries</div>
                   </div>
                 </div>
@@ -298,7 +298,7 @@ export default function Home() {
       <Section id="faculty" className="bg-gradient-to-b from-noetex-indigo/20 to-noetex-black">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Meet Our <span className="gradient-text">Faculty</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -334,7 +334,7 @@ export default function Home() {
       <Section className="bg-gradient-to-b from-noetex-black to-noetex-black/50">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               What Our <span className="gradient-text">Students Say</span>
             </h2>
           </div>
@@ -374,7 +374,7 @@ export default function Home() {
       <Section className="bg-gradient-to-b from-noetex-black/50 to-noetex-black">
         <div className="container-custom">
           <div className="text-center glass-card p-12 neuron-glow animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Ready to Shape the <span className="gradient-text">Future</span>?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
