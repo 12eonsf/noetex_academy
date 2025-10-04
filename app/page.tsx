@@ -92,7 +92,7 @@ export default function Home() {
     },
     {
       title: "Understanding Intelligent Agents",
-      description: "This workshop explores cutting-edge reasoning techniques in AI and agents, focusing on Chain of Thought (CoT) and the ReAct framework.",
+      description: "This workshop introduces cutting-edge reasoning techniques in AI—covering Chain of Thought and the ReAct framework—to help participants develop step-by-step problem-solving skills and a deeper understanding of agentic intelligence.",
       duration: "3 Hours",
       tags: ["AI", "Machine Learning", "Reasoning"],
       href: "/programs/intelligent-agents",
@@ -101,7 +101,7 @@ export default function Home() {
       startDate: "August 23, 2025",
       location: "King's College London",
       coverImage: "/courses/placeholder-workshop-1.jpg",
-      instructor: "Speaker from: Imperial College",
+      instructor: "",
       type: "Workshop"
     },
     {
@@ -115,7 +115,7 @@ export default function Home() {
       startDate: "August 22, 2025",
       location: "King's College London",
       coverImage: "/courses/placeholder-workshop-2.jpg",
-      instructor: "Workshop Leaders",
+      instructor: "",
       type: "Workshop"
     }
   ]
