@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useMemo, useRef } from 'react'
+import React, { useMemo, useRef, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
@@ -260,29 +260,31 @@ function Particles({ count = 120, radius = 1.2 }) {
 function BrainScene() {
   return (
     <div className="w-full h-full">
-      <Canvas 
-        camera={{ position: [0, 0, 4], fov: 40 }}
-        gl={{ 
-          alpha: true, 
-          antialias: false,
-          powerPreference: "high-performance",
-          stencil: false,
-          depth: true
-        }}
-        dpr={[1, 2]}
-        performance={{ min: 0.5 }}
-        style={{ background: 'transparent' }}
-      >
-        <ambientLight intensity={0.2} />
-        <pointLight position={[3, 3, 2]} intensity={40} color="#4a55b1" distance={10} decay={2} />
-        <pointLight position={[-3, -2, 2]} intensity={26} color="#7c3aed" distance={10} decay={2} />
-        <group rotation={[0.1, 0.6, 0]}>
-          <BrainShell noiseAmp={0.22} />
-          <SparklingParticles count={60} />
-          <Particles />
-        </group>
-        <OrbitControls enablePan={false} minDistance={3} maxDistance={6} />
-      </Canvas>
+      <Suspense fallback={<div className="w-full h-full bg-gradient-to-br from-noetex-black to-noetex-indigo animate-pulse" />}>
+        <Canvas 
+          camera={{ position: [0, 0, 4], fov: 40 }}
+          gl={{ 
+            alpha: true, 
+            antialias: false,
+            powerPreference: "high-performance",
+            stencil: false,
+            depth: true
+          }}
+          dpr={[1, 2]}
+          performance={{ min: 0.5 }}
+          style={{ background: 'transparent' }}
+        >
+          <ambientLight intensity={0.2} />
+          <pointLight position={[3, 3, 2]} intensity={40} color="#4a55b1" distance={10} decay={2} />
+          <pointLight position={[-3, -2, 2]} intensity={26} color="#7c3aed" distance={10} decay={2} />
+          <group rotation={[0.1, 0.6, 0]}>
+            <BrainShell noiseAmp={0.22} />
+            <SparklingParticles count={60} />
+            <Particles />
+          </group>
+          <OrbitControls enablePan={false} minDistance={3} maxDistance={6} />
+        </Canvas>
+      </Suspense>
     </div>
   )
 }

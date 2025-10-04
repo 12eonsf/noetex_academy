@@ -3,7 +3,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Brain, AlignJustify } from 'lucide-react'
-import Brain3D from './Brain3D'
+import dynamic from 'next/dynamic'
+
+const Brain3D = dynamic(() => import('./Brain3D'), { 
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gradient-to-br from-noetex-black to-noetex-indigo animate-pulse" />
+})
 
 export default function Hero() {
   return (

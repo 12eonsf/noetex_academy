@@ -1,10 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Orbitron, Space_Grotesk, Audiowide, Major_Mono_Display } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
+const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron' })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
+const audiowide = Audiowide({ subsets: ['latin'], weight: '400', variable: '--font-audiowide' })
+const majorMono = Major_Mono_Display({ subsets: ['latin'], weight: '400', variable: '--font-major-mono' })
 
 export const metadata: Metadata = {
   title: 'Noetex Academy - Where Minds Meet the Future',
@@ -33,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-noetex-black text-white antialiased`}>
+      <body className={`${inter.className} ${orbitron.variable} ${spaceGrotesk.variable} ${audiowide.variable} ${majorMono.variable} bg-noetex-black text-white antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-1">
