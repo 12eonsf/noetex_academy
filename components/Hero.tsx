@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Brain } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, Brain, AlignJustify } from 'lucide-react'
 import Brain3D from './Brain3D'
 
 export default function Hero() {
@@ -13,8 +14,38 @@ export default function Hero() {
         <Brain3D />
       </div>
 
+      {/* Mobile Header - Glassmorphism effect */}
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-noetex-black/20 border-b border-white/10">
+        <div className="container-custom py-4">
+          <div className="flex flex-col items-center space-y-3">
+            {/* Logo */}
+            <div className="flex items-center justify-center">
+              <Image 
+                src="/logo.svg" 
+                alt="Noetex Academy Logo" 
+                width={40} 
+                height={40}
+                className="h-8 w-8"
+              />
+            </div>
+            
+            {/* Academy Name */}
+            <div className="text-center">
+              <span className="text-lg font-heading font-bold text-white">Noetex Academy</span>
+            </div>
+            
+            {/* Navigation Icon */}
+            <div className="flex justify-center">
+              <button className="p-2 rounded-lg glass-card glass-card-hover">
+                <AlignJustify className="h-5 w-5 text-white" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Main Content - Transparent background to show 3D brain */}
-      <div className="relative z-10 container-custom min-h-screen flex items-end justify-center lg:justify-start px-4 sm:px-6 lg:px-8 pb-16 lg:pb-0 lg:items-center">
+      <div className="relative z-10 container-custom min-h-screen flex items-end justify-center lg:justify-start px-4 sm:px-6 lg:px-8 pb-16 lg:pb-0 lg:items-center pt-20 lg:pt-0">
         <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0 w-full lg:max-w-2xl lg:pr-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading leading-tight animate-fade-in mb-6 sm:mb-8 px-2">
             Learning Across
