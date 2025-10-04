@@ -124,43 +124,56 @@ export default function CourseCard({
           </div>
 
           {/* Course Stats */}
-          <div className="space-y-3 mb-4">
-            {/* Format and Duration */}
-            <div className="flex items-center justify-between text-sm text-gray-400">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-1">
+          <div className="space-y-2 mb-4">
+            {/* Format */}
+            {format && (
+              <div className="flex items-center text-sm text-gray-400">
+                <div className="flex items-center space-x-2">
                   {format === 'Livestreaming' ? <Radio className="h-4 w-4" /> : <Building className="h-4 w-4" />}
                   <span>{format}</span>
                 </div>
-                <div className="flex items-center space-x-1">
-                  <Clock className="h-4 w-4" />
-                  <span>{duration}</span>
-                </div>
               </div>
-              {!isPastProgram && (
-                <div className="flex items-center space-x-1">
+            )}
+
+            {/* Duration */}
+            <div className="flex items-center text-sm text-gray-400">
+              <div className="flex items-center space-x-2">
+                <Clock className="h-4 w-4" />
+                <span>{duration}</span>
+              </div>
+            </div>
+
+            {/* Student Count */}
+            {!isPastProgram && (maxStudents || minStudents) && (
+              <div className="flex items-center text-sm text-gray-400">
+                <div className="flex items-center space-x-2">
                   <Users2 className="h-4 w-4" />
                   <span>
                     {maxStudents ? `Max ${maxStudents} students` : `Min ${minStudents} students`}
                   </span>
                 </div>
-              )}
-            </div>
-
-            {/* Start Date and Location */}
-            <div className="flex items-center justify-between text-sm text-gray-400">
-              <div className="flex items-center space-x-1">
-                <Calendar className="h-4 w-4" />
-                <span>Start: {startDate}</span>
               </div>
-              {location && (
-                <div className="flex items-center space-x-1">
+            )}
+
+            {/* Start Date */}
+            {startDate && (
+              <div className="flex items-center text-sm text-gray-400">
+                <div className="flex items-center space-x-2">
+                  <Calendar className="h-4 w-4" />
+                  <span>Start: {startDate}</span>
+                </div>
+              </div>
+            )}
+
+            {/* Location */}
+            {location && (
+              <div className="flex items-center text-sm text-gray-400">
+                <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4" />
                   <span>{location}</span>
                 </div>
-              )}
-            </div>
-
+              </div>
+            )}
           </div>
 
           {/* CTA */}

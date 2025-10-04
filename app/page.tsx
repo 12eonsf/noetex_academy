@@ -21,7 +21,7 @@ export default function Home() {
       startDate: "November 15, 2025",
       maxStudents: 15,
       location: "Zoom",
-      coverImage: "/courses/neuroscience-decision-making.jpg",
+      coverImage: "/courses/neuroscience-decision-making.JPG",
       instructor: "Faculty from: Dartmouth College, University College London",
       hours: "24.5 Hours"
     },
