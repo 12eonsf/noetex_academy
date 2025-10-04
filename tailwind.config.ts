@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'futura': ['Inter', 'system-ui', 'sans-serif'],
+        'heading': ['Orbitron', 'Inter', 'system-ui', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
+        'display': ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         'noetex-black': '#0c0c0e',
         'noetex-indigo': '#4a55b1',
