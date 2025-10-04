@@ -25,8 +25,16 @@
         stroke-width="2.5"
         filter="url(#glow)"/>
   
-  <!-- Delta Triangle with hollow design -->
-  <path d="M32 8 L40 32 L24 32 Z" 
+  <!-- Delta Triangle - Two right triangles forming a larger triangle -->
+  <!-- Left right triangle -->
+  <path d="M32 8 L40 20 L32 32 Z" 
+        fill="none" 
+        stroke="url(#logoGradient)" 
+        stroke-width="2.5"
+        filter="url(#glow)"/>
+  
+  <!-- Right right triangle -->
+  <path d="M32 8 L40 20 L40 32 L32 32 Z" 
         fill="none" 
         stroke="url(#logoGradient)" 
         stroke-width="2.5"
@@ -37,4 +45,9 @@
   <line x1="10" y1="28" x2="14" y2="28" stroke="url(#logoGradient)" stroke-width="1" opacity="0.7"/>
   <line x1="30" y1="12" x2="34" y2="12" stroke="url(#logoGradient)" stroke-width="1" opacity="0.7"/>
   <line x1="30" y1="28" x2="34" y2="28" stroke="url(#logoGradient)" stroke-width="1" opacity="0.7"/>
+  
+  <!-- Triangle accent lines -->
+  <line x1="34" y1="14" x2="38" y2="14" stroke="url(#logoGradient)" stroke-width="1" opacity="0.7"/>
+  <line x1="34" y1="26" x2="38" y2="26" stroke="url(#logoGradient)" stroke-width="1" opacity="0.7"/>
+  <line x1="36" y1="16" x2="36" y2="24" stroke="url(#logoGradient)" stroke-width="1" opacity="0.7"/>
 </svg>

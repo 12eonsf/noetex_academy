@@ -14,29 +14,6 @@ export default function Hero() {
         <Brain3D />
       </div>
 
-      {/* Mobile Header - Glassmorphism effect - Single row */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-noetex-black/20 border-b border-white/10">
-        <div className="container-custom py-3">
-          <div className="flex items-center justify-between">
-            {/* Logo and Academy Name */}
-            <div className="flex items-center space-x-3">
-              <Image 
-                src="/logo.svg" 
-                alt="Noetex Academy Logo" 
-                width={32} 
-                height={32}
-                className="h-6 w-6"
-              />
-              <span className="text-lg font-heading font-bold text-white">Noetex Academy</span>
-            </div>
-            
-            {/* Navigation Icon */}
-            <button className="p-2 rounded-lg glass-card glass-card-hover">
-              <AlignJustify className="h-5 w-5 text-white" />
-            </button>
-          </div>
-        </div>
-      </div>
 
       {/* Main Content - Transparent background to show 3D brain */}
       <div className="relative z-10 container-custom min-h-screen flex items-end justify-center lg:justify-start px-4 sm:px-6 lg:px-8 pb-16 lg:pb-0 lg:items-center pt-20 lg:pt-0">
