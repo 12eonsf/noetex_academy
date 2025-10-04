@@ -136,7 +136,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Redefining <span className="gradient-text">Education</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-display">
               We bridge the gap between neuroscience, AI, and social sciences to create 
               the next generation of interdisciplinary thinkers and innovators.
             </p>
@@ -183,7 +183,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Featured <span className="gradient-text">Programs</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-display">
               Explore our cutting-edge programs designed to prepare you for the future of science and technology.
             </p>
           </div>
@@ -219,7 +219,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Past <span className="gradient-text">Programs</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-display">
               Get inspired by what previous learners explored, built, and experienced across neuroscience, AI, and beyond.
             </p>
           </div>
@@ -301,7 +301,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Meet Our <span className="gradient-text">Faculty</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-display">
               Learn from world-renowned experts who are pushing the boundaries of human knowledge.
             </p>
           </div>
@@ -377,21 +377,21 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-heading mb-6">
               Ready to Shape the <span className="gradient-text">Future</span>?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto font-display">
               Join thousands of students who are already building the next generation 
               of human-AI collaboration and cognitive enhancement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/apply"
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-heading font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <span>Apply Now</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/apply"
-                className="px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
+                className="px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-heading font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <span>Apply Now</span>
                 <Brain className="h-5 w-5" />
