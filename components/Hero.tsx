@@ -18,13 +18,13 @@ export default function Hero() {
       {/* Main Content - Transparent background to show 3D brain */}
       <div className="relative z-10 container-custom min-h-screen flex items-end justify-center lg:justify-start px-4 sm:px-6 lg:px-8 pb-16 lg:pb-0 lg:items-center pt-20 lg:pt-0">
         <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0 w-full lg:max-w-2xl lg:pr-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading leading-tight animate-fade-in mb-6 sm:mb-8 px-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-mono-display leading-tight animate-fade-in mb-6 sm:mb-8 px-2">
             Learning Across
             <br />
-            <span className="gradient-text font-heading">Minds and Machines</span>
+            <span className="gradient-text font-mono-display">Minds and Machines</span>
           </h1>
           
-          <p className="text-lg sm:text-xl text-gray-300 leading-relaxed animate-fade-in-delay mb-8 sm:mb-12 px-4 font-display">
+          <p className="text-lg sm:text-xl text-gray-300 leading-relaxed animate-fade-in-delay mb-8 sm:mb-12 px-4 font-chathura">
             Empowering future thinkers to navigate between biology and technology.
           </p>
 
