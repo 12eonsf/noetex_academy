@@ -133,7 +133,7 @@ export default function Home() {
       <Section id="about" className="bg-gradient-to-b from-noetex-black to-noetex-black/50">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
+            <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Redefining <span className="gradient-text">Education</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-mono-display">
@@ -180,7 +180,7 @@ export default function Home() {
       <Section id="programs" className="bg-gradient-to-b from-noetex-black/50 to-noetex-black">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
+            <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Featured <span className="gradient-text">Programs</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto font-mono-display">
@@ -216,7 +216,7 @@ export default function Home() {
       <Section className="bg-gradient-to-b from-noetex-black to-noetex-black/50">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
+            <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Past <span className="gradient-text">Programs</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto font-mono-display">
@@ -298,7 +298,7 @@ export default function Home() {
       <Section id="faculty" className="bg-gradient-to-b from-noetex-indigo/20 to-noetex-black">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
+            <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Meet Our <span className="gradient-text">Faculty</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto font-mono-display">
@@ -374,7 +374,7 @@ export default function Home() {
       <Section className="bg-gradient-to-b from-noetex-black/50 to-noetex-black">
         <div className="container-custom">
           <div className="text-center glass-card p-12 neuron-glow animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
+            <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Ready to Shape the <span className="gradient-text">Future</span>?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto font-mono-display">
