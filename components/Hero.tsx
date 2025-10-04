@@ -9,7 +9,7 @@ export default function Hero() {
     <section className="relative min-h-screen bg-gradient-to-br from-noetex-black via-noetex-black to-noetex-indigo overflow-hidden">
       
       {/* 3D Brain Background - Desktop: Right side, Mobile: Full screen */}
-      <div className="absolute inset-0 w-full h-full z-0 lg:right-0 lg:w-1/2">
+      <div className="absolute inset-0 w-full h-full z-0 lg:right-0 lg:w-1/2 lg:left-auto">
         <Brain3D />
       </div>
 

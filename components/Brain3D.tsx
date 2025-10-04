@@ -116,12 +116,29 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3)
     const sizes = new Float32Array(count)
+    const colors = new Float32Array(count * 3)
+    
+    // Color palette for different colored particles
+    const colorPalette = [
+      [0.8, 0.4, 1.0], // Purple
+      [0.4, 0.8, 1.0], // Blue
+      [1.0, 0.6, 0.8], // Pink
+      [0.6, 1.0, 0.8], // Cyan
+      [1.0, 0.8, 0.4], // Orange
+      [0.8, 1.0, 0.4], // Yellow
+    ]
+    
     for (let i = 0; i < count; i++) {
       const v = new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * radius)
       pos.set([v.x, v.y, v.z], i * 3)
-      sizes[i] = Math.random() * 0.02 + 0.005 // Random sizes between 0.005 and 0.025
+      sizes[i] = Math.random() * 0.08 + 0.02 // Larger sizes between 0.02 and 0.1
+      
+      // Assign random color from palette
+      const colorIndex = Math.floor(Math.random() * colorPalette.length)
+      const color = colorPalette[colorIndex]
+      colors.set(color, i * 3)
     }
-    return { positions: pos, sizes: sizes }
+    return { positions: pos, sizes: sizes, colors: colors }
   }, [count, radius])
 
   useFrame(({ clock }) => {
@@ -147,6 +164,12 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
           count={positions.sizes.length} 
           itemSize={1} 
         />
+        <bufferAttribute 
+          attach="attributes-color" 
+          array={positions.colors} 
+          count={positions.colors.length / 3} 
+          itemSize={3} 
+        />
       </bufferGeometry>
       <shaderMaterial
         transparent
@@ -154,10 +177,13 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
         blending={THREE.AdditiveBlending}
         vertexShader={`
           attribute float size;
+          attribute vec3 color;
           varying float vAlpha;
+          varying vec3 vColor;
           uniform float uTime;
           void main() {
             vAlpha = 0.5 + 0.5 * sin(uTime * 2.0 + position.y * 10.0);
+            vColor = color;
             vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
             gl_PointSize = size * (300.0 / -mvPosition.z);
             gl_Position = projectionMatrix * mvPosition;
@@ -165,12 +191,13 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
         `}
         fragmentShader={`
           varying float vAlpha;
+          varying vec3 vColor;
           uniform float uTime;
           void main() {
             float dist = distance(gl_PointCoord, vec2(0.5));
             float alpha = 1.0 - smoothstep(0.0, 0.5, dist);
             alpha *= vAlpha;
-            gl_FragColor = vec4(0.8, 0.4, 1.0, alpha);
+            gl_FragColor = vec4(vColor, alpha);
           }
         `}
         uniforms={uniforms}
