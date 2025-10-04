@@ -261,7 +261,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/programs"
-              className="inline-flex items-center space-x-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300"
+              className="inline-flex items-center space-x-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 font-futura-1"
             >
               <span>View All Programs</span>
               <ArrowRight className="h-5 w-5" />
@@ -379,7 +379,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/faculty"
-              className="inline-flex items-center space-x-2 px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-semibold transition-all duration-300"
+              className="inline-flex items-center space-x-2 px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-semibold transition-all duration-300 font-futura-1"
             >
               <span>View All</span>
               <ArrowRight className="h-5 w-5" />

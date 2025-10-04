@@ -54,7 +54,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/apply"
-              className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 transition-all duration-200"
+              className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 transition-all duration-200 font-futura-1"
             >
               Apply Now
             </Link>
@@ -87,7 +87,7 @@ export default function Navbar() {
               <Link
                 href="/apply"
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-center hover:from-indigo-600 hover:to-purple-600 transition-all duration-200"
+                className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-center hover:from-indigo-600 hover:to-purple-600 transition-all duration-200 font-futura-1"
               >
                 Apply Now
               </Link>
