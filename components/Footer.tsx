@@ -40,7 +40,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link href="/" className="block mb-4">
-              <span className="text-xl font-brand-3 gradient-text">Noetex Academy</span>
+              <span className="text-xl font-brand-3 gradient-text">Noetex Society</span>
             </Link>
             <p className="text-gray-400 mb-6">
               Where minds meet the future. Join the next generation of interdisciplinary thinkers.

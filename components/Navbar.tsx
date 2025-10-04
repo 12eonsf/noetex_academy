@@ -37,7 +37,7 @@ export default function Navbar() {
           {/* Brand */}
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0 max-w-[50%] sm:max-w-[60%] md:max-w-none">
                 <span className="text-xs sm:text-sm md:text-lg lg:text-xl font-brand-3 text-white overflow-hidden whitespace-nowrap uppercase">
-                  Noetex Academy
+                  Noetex Society
                 </span>
           </Link>
 

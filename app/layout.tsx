@@ -12,21 +12,21 @@ const majorMono = Major_Mono_Display({ subsets: ['latin'], weight: '400', variab
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://noetex-academy.vercel.app'),
-  title: 'Noetex Academy - Where Minds Meet the Future',
-  description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences. Join the next generation of interdisciplinary thinkers.',
+      title: 'Noetex Society - Where Minds Meet the Future',
+      description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences. Join the next generation of interdisciplinary thinkers.',
   keywords: 'neuroscience, AI, education, life sciences, social sciences, cognitive science, brain research',
-  authors: [{ name: 'Noetex Academy' }],
+  authors: [{ name: 'Noetex Society' }],
   openGraph: {
-    title: 'Noetex Academy - Where Minds Meet the Future',
+    title: 'Noetex Society - Where Minds Meet the Future',
     description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences.',
     type: 'website',
     locale: 'en_US',
     url: 'https://noetex-academy.vercel.app',
-    siteName: 'Noetex Academy',
+    siteName: 'Noetex Society',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Noetex Academy - Where Minds Meet the Future',
+    title: 'Noetex Society - Where Minds Meet the Future',
     description: 'A futuristic education platform focused on neuroscience, AI, life sciences, and social sciences.',
   },
 }

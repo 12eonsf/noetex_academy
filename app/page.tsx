@@ -243,7 +243,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
-              Why Choose <span className="gradient-text">Noetex Academy</span>
+              Why Choose <span className="gradient-text">Noetex Society</span>
             </h2>
           </div>
 
@@ -397,8 +397,8 @@ export default function Home() {
       {/* Sliding NOETEX ACADEMY Text */}
       <div className="relative overflow-hidden bg-noetex-black py-16">
         <div className="animate-slide-left">
-          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400/20 to-purple-400/20 select-none whitespace-nowrap">
-            NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY
+          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400/20 to-purple-400/20 select-none whitespace-nowrap" style={{ WebkitTextStroke: '1px rgba(99, 102, 241, 0.3)' }}>
+            NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY
           </h1>
         </div>
       </div>
