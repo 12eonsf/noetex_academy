@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Brain, Mail, Twitter, Linkedin, Github, MapPin, Phone } from 'lucide-react'
+import { Mail, Twitter, Linkedin, Github, MapPin, Phone } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -39,9 +39,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Brain className="h-8 w-8 text-indigo-400" />
-              <span className="text-xl font-bold gradient-text">Noetex Academy</span>
+            <Link href="/" className="block mb-4">
+              <span className="text-xl font-brand-3 gradient-text">Noetex Academy</span>
             </Link>
             <p className="text-gray-400 mb-6">
               Where minds meet the future. Join the next generation of interdisciplinary thinkers.
