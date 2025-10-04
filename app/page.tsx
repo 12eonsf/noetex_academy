@@ -397,7 +397,7 @@ export default function Home() {
       {/* Sliding NOETEX ACADEMY Text */}
       <div className="relative overflow-hidden bg-noetex-black py-16">
         <div className="animate-slide-left">
-          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400/20 to-purple-400/20 select-none whitespace-nowrap" style={{ WebkitTextStroke: '1px rgba(99, 102, 241, 0.3)' }}>
+          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent select-none whitespace-nowrap" style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.4)' }}>
             NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY
           </h1>
         </div>
