@@ -152,7 +152,7 @@ export default function Home() {
       institution: "University of Cambridge",
       bio: "A philosopher-turned-neuroscientist whose research combines information theory, network science, and computational modelling to uncover how brain structure and dynamics give rise to consciousness and intelligence across species, states, and systems.",
       image: "/faculty/andrea-luppi.jpg",
-      specialties: ["Artificial Neural Network", "Computational Neuroscience", "Information Theory", "Consciousness"],
+      specialties: ["Artificial Neural Network", "Computational Neuroscience", "Consciousness"],
       website: "https://www.cam.ac.uk",
       role: "Speaker"
     }
@@ -381,7 +381,7 @@ export default function Home() {
               href="/faculty"
               className="inline-flex items-center space-x-2 px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-semibold transition-all duration-300"
             >
-              <span>View All Faculty</span>
+              <span>View All</span>
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
