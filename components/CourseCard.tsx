@@ -56,6 +56,13 @@ export default function CourseCard({
             </div>
           )}
 
+          {/* Completed Badge for Past Programs */}
+          {isPastProgram && (
+            <div className="absolute -top-3 -right-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">
+              Completed
+            </div>
+          )}
+
           {/* Course Cover Image */}
           {coverImage && (
             <div className="relative mb-4 h-48 rounded-lg overflow-hidden">

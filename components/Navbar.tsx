@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Brain } from 'lucide-react'
+import { Menu, X, Brain, Grid3X3 } from 'lucide-react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -65,10 +65,10 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 flex-shrink-0 ml-2 sm:ml-4"
+            className="md:hidden p-2 flex-shrink-0 ml-3 sm:ml-5 mr-1"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6 text-white" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
+            {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6 text-white" /> : <Grid3X3 className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
           </button>
         </div>
 
