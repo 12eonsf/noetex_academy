@@ -133,7 +133,7 @@ function SparklingParticles({ count = 120, radius = 1.1 }) {
     for (let i = 0; i < count; i++) {
       const v = new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * radius)
       pos.set([v.x, v.y, v.z], i * 3)
-      sizes[i] = Math.random() * 0.15 + 0.05 // Much larger sizes between 0.05 and 0.2
+      sizes[i] = Math.random() * 0.25 + 0.1 // Larger sizes between 0.1 and 0.35
       
       // Assign random color from palette
       const colorIndex = Math.floor(Math.random() * colorPalette.length)
@@ -241,7 +241,7 @@ function Particles({ count = 400, radius = 1.2 }) {
         />
       </bufferGeometry>
       <pointsMaterial 
-        size={0.02} 
+        size={0.04} 
         color={"#8b5cf6"} 
         transparent 
         opacity={0.8} 
