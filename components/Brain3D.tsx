@@ -2,7 +2,7 @@
 
 import React, { useMemo, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Environment } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
 const noiseGLSL = `
@@ -72,8 +72,8 @@ function BrainShell({
   useFrame((_, dt) => (uniforms.uTime.value += dt * timeScale))
   
   return (
-    <mesh>
-      <icosahedronGeometry args={[1.35, 6]} />
+        <mesh>
+          <icosahedronGeometry args={[1.35, 4]} />
       <shaderMaterial
         transparent
         depthWrite={false}
@@ -85,8 +85,8 @@ function BrainShell({
               ${noiseGLSL}
               void main(){
                 float hemi = sign(position.x);
-                float n = snoise(normalize(position) * 2.0 + vec3(0.0, uTime * 0.4, uTime * 0.6));
-                float r = 1.0 + uAmp * n + 0.06 * hemi * sin(position.y * 3.0);
+                float n = snoise(normalize(position) * 1.5 + vec3(0.0, uTime * 0.3, uTime * 0.4));
+                float r = 1.0 + uAmp * n + 0.04 * hemi * sin(position.y * 2.0);
                 vec3 p = normalize(position) * r;
                 vNoise = n;
                 gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
@@ -109,7 +109,7 @@ function BrainShell({
 }
 
 
-function SparklingParticles({ count = 80, radius = 1.1 }) {
+function SparklingParticles({ count = 60, radius = 1.1 }) {
   const ref = useRef<THREE.Points>(null)
   const uniforms = useMemo(() => ({ 
     uTime: { value: 0 }
@@ -149,13 +149,13 @@ function SparklingParticles({ count = 80, radius = 1.1 }) {
     return { positions: pos, sizes: sizes, colors: colors }
   }, [count, radius])
 
-  useFrame(({ clock }) => {
-    if (ref.current) {
-      ref.current.rotation.y = clock.getElapsedTime() * 0.02
-      ref.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.01) * 0.1
-    }
-    uniforms.uTime.value = clock.getElapsedTime()
-  })
+      useFrame(({ clock }) => {
+        if (ref.current) {
+          ref.current.rotation.y = clock.getElapsedTime() * 0.01
+          ref.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.005) * 0.05
+        }
+        uniforms.uTime.value = clock.getElapsedTime()
+      })
 
   return (
     <points ref={ref}>
@@ -194,7 +194,7 @@ function SparklingParticles({ count = 80, radius = 1.1 }) {
                 vPosition = position;
                 vColor = color;
                 
-                vAlpha = 0.4 + 0.6 * sin(uTime * 1.5 + position.y * 8.0 + position.x * 3.0);
+                vAlpha = 0.4 + 0.6 * sin(uTime * 1.0 + position.y * 4.0 + position.x * 2.0);
                 
                 vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
                 gl_PointSize = size * (400.0 / -mvPosition.z);
@@ -221,7 +221,7 @@ function SparklingParticles({ count = 80, radius = 1.1 }) {
   )
 }
 
-function Particles({ count = 200, radius = 1.2 }) {
+function Particles({ count = 120, radius = 1.2 }) {
   const ref = useRef<THREE.Points>(null)
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3)
@@ -232,9 +232,9 @@ function Particles({ count = 200, radius = 1.2 }) {
     return pos
   }, [count, radius])
   
-  useFrame(({ clock }) => {
-    if (ref.current) ref.current.rotation.y = clock.getElapsedTime() * 0.05
-  })
+      useFrame(({ clock }) => {
+        if (ref.current) ref.current.rotation.y = clock.getElapsedTime() * 0.02
+      })
   
   return (
     <points ref={ref}>
@@ -262,7 +262,15 @@ function BrainScene() {
     <div className="w-full h-full">
       <Canvas 
         camera={{ position: [0, 0, 4], fov: 40 }}
-        gl={{ alpha: true, antialias: true }}
+        gl={{ 
+          alpha: true, 
+          antialias: false,
+          powerPreference: "high-performance",
+          stencil: false,
+          depth: true
+        }}
+        dpr={[1, 2]}
+        performance={{ min: 0.5 }}
         style={{ background: 'transparent' }}
       >
         <ambientLight intensity={0.2} />
@@ -270,11 +278,10 @@ function BrainScene() {
         <pointLight position={[-3, -2, 2]} intensity={26} color="#7c3aed" distance={10} decay={2} />
         <group rotation={[0.1, 0.6, 0]}>
           <BrainShell noiseAmp={0.22} />
-          <SparklingParticles count={120} />
+          <SparklingParticles count={60} />
           <Particles />
         </group>
         <OrbitControls enablePan={false} minDistance={3} maxDistance={6} />
-        <Environment preset="night" />
       </Canvas>
     </div>
   )
