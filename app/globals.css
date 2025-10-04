@@ -90,10 +90,6 @@ body::-webkit-scrollbar {
     font-variant-ligatures: common-ligatures;
   }
   
-  .text-futura {
-    font-family: 'Inter', system-ui, sans-serif;
-    letter-spacing: -0.01em;
-  }
   
   .font-body {
     font-family: 'Lato', 'Inter', system-ui, sans-serif;
