@@ -117,6 +117,20 @@ export default function Home() {
       coverImage: "/courses/placeholder-workshop-2.jpg",
       instructor: "",
       type: "Workshop"
+    },
+    {
+      title: "Brain-Computer Interface and Neuromodulation",
+      description: "This symposium explores advances in neuromodulation and brain–computer interface technologies, highlighting their emerging applications in neurological and psychiatric disorders.",
+      duration: "3 Hours",
+      tags: ["Neurotechnology", "Neurosurgery", "Brain-Computer Interface"],
+      href: "/programs/bci-neuromodulation",
+      featured: false,
+      format: "In-person",
+      startDate: "June 3, 2023",
+      location: "Beijing",
+      coverImage: "/courses/placeholder-symposium.jpg",
+      instructor: "",
+      type: "Symposium"
     }
   ]
 
