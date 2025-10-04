@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Brand */}
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0 max-w-[60%] sm:max-w-none">
-            <span className="text-sm sm:text-lg md:text-xl font-brand-3 text-white glitch-text overflow-hidden whitespace-nowrap">
+            <span className="text-sm sm:text-lg md:text-xl font-brand-3 text-white overflow-hidden whitespace-nowrap">
               Noetex Academy
             </span>
           </Link>
