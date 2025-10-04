@@ -56,13 +56,6 @@ export default function CourseCard({
             </div>
           )}
 
-          {/* Completed Badge for Past Programs */}
-          {isPastProgram && (
-            <div className="absolute -top-3 -right-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">
-              Completed
-            </div>
-          )}
-
           {/* Course Cover Image */}
           {coverImage && (
             <div className="relative mb-4 h-48 rounded-lg overflow-hidden">
@@ -96,6 +89,18 @@ export default function CourseCard({
                     </div>
                   )}
                 </>
+              )}
+
+              {/* Completed Badge for Past Programs - on cover image */}
+              {isPastProgram && (
+                <div className="absolute top-3 right-3">
+                  <div className="bg-green-500/20 backdrop-blur-sm border border-green-400/50 text-white px-3 py-1.5 rounded-lg relative overflow-hidden inline-block">
+                    {/* Gradient border effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-400/30 to-emerald-400/30 rounded-lg -z-10" />
+                    {/* Text shadow for better readability */}
+                    <span className="text-sm font-bold relative z-10 drop-shadow-lg">Completed</span>
+                  </div>
+                </div>
               )}
             </div>
           )}
