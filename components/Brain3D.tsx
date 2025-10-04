@@ -150,7 +150,8 @@ function SparklingParticles({ count = 120, radius = 1.1, mousePosition = { x: 0,
       ref.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.01) * 0.1
     }
     uniforms.uTime.value = clock.getElapsedTime()
-    uniforms.uMouse.value.set(mousePosition.x, mousePosition.y)
+    // Update mouse position with proper scaling
+    uniforms.uMouse.value.set(mousePosition.x * 2, mousePosition.y * 2)
   })
 
   return (
@@ -276,11 +277,13 @@ function BrainScene() {
   }
   
   const handleTouchMove = (event: React.TouchEvent) => {
-    const rect = event.currentTarget.getBoundingClientRect()
-    const touch = event.touches[0]
-    const x = (touch.clientX - rect.left) / rect.width * 2 - 1
-    const y = -(touch.clientY - rect.top) / rect.height * 2 + 1
-    setMousePosition({ x, y })
+    if (event.touches.length > 0) {
+      const rect = event.currentTarget.getBoundingClientRect()
+      const touch = event.touches[0]
+      const x = (touch.clientX - rect.left) / rect.width * 2 - 1
+      const y = -(touch.clientY - rect.top) / rect.height * 2 + 1
+      setMousePosition({ x, y })
+    }
   }
   
   return (
@@ -289,9 +292,12 @@ function BrainScene() {
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
     >
-      <Canvas camera={{ position: [0, 0, 4], fov: 40 }}>
-        <color attach="background" args={["#0c0c0e"]} />
-        <fog attach="fog" args={["#0c0c0e", 6, 12]} />
+      <Canvas 
+        camera={{ position: [0, 0, 4], fov: 40 }}
+        gl={{ alpha: true, antialias: true }}
+        style={{ background: 'transparent' }}
+      >
+        <color attach="background" args={["transparent"]} />
         <ambientLight intensity={0.2} />
         <pointLight position={[3, 3, 2]} intensity={40} color="#4a55b1" distance={10} decay={2} />
         <pointLight position={[-3, -2, 2]} intensity={26} color="#7c3aed" distance={10} decay={2} />
