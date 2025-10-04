@@ -36,21 +36,20 @@ export default function Hero() {
             Empowering future thinkers to navigate between biology and technology.
           </p>
 
-          <div className="flex flex-row gap-4 justify-center lg:justify-start animate-fade-in-delay-2 px-4">
-            <Link
-              href="/programs"
-              className="group px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center lg:justify-start space-x-2 text-sm sm:text-base flex-1 sm:flex-none"
-            >
-              <span>Explore Programs</span>
-              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-            
-            <Link
-              href="/apply"
-              className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl glass-card glass-card-hover text-white font-futura-1 font-semibold transition-all duration-300 flex items-center justify-center lg:justify-start text-sm sm:text-base flex-1 sm:flex-none"
-            >
-              <span>Get Brochure</span>
-            </Link>
+          <div className="flex items-center justify-center lg:justify-start animate-fade-in-delay-2 px-4">
+            <div className="flex items-center space-x-4 w-full lg:w-auto">
+              {/* Left line */}
+              <div className="flex-1 lg:flex-none lg:w-16 h-px bg-gradient-to-r from-indigo-400 to-purple-400"></div>
+              
+              {/* Button */}
+              <Link
+                href="/programs"
+                className="group px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base"
+              >
+                <span>Explore Programs</span>
+                <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
