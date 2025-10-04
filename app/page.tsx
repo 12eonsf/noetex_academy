@@ -136,7 +136,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Redefining <span className="gradient-text">Education</span>
             </h2>
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-chathura">
+            <p className="text-3xl md:text-4xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-chathura">
               We bridge the gap between neuroscience, AI, and social sciences to create 
               the next generation of interdisciplinary thinkers and innovators.
             </p>
@@ -183,7 +183,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Featured <span className="gradient-text">Programs</span>
             </h2>
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto font-chathura">
+            <p className="text-3xl md:text-4xl text-gray-300 max-w-3xl mx-auto font-chathura">
               Explore our cutting-edge programs designed to prepare you for the future of science and technology.
             </p>
           </div>
@@ -219,7 +219,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Past <span className="gradient-text">Programs</span>
             </h2>
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto font-chathura">
+            <p className="text-3xl md:text-4xl text-gray-300 max-w-3xl mx-auto font-chathura">
               Get inspired by what previous learners explored, built, and experienced across neuroscience, AI, and beyond.
             </p>
           </div>
@@ -242,7 +242,7 @@ export default function Home() {
       <Section className="bg-gradient-to-b from-noetex-black to-noetex-indigo/20">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
+            <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Why Choose <span className="gradient-text">Noetex Academy</span>
             </h2>
           </div>
@@ -301,7 +301,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Meet Our <span className="gradient-text">Faculty</span>
             </h2>
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto font-chathura">
+            <p className="text-3xl md:text-4xl text-gray-300 max-w-3xl mx-auto font-chathura">
               Learn from world-renowned experts who are pushing the boundaries of human knowledge.
             </p>
           </div>
@@ -334,7 +334,7 @@ export default function Home() {
       <Section className="bg-gradient-to-b from-noetex-black to-noetex-black/50">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-heading mb-6">
+            <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               What Our <span className="gradient-text">Students Say</span>
             </h2>
           </div>
@@ -377,7 +377,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Ready to Shape the <span className="gradient-text">Future</span>?
             </h2>
-            <p className="text-2xl md:text-3xl text-gray-300 mb-8 max-w-2xl mx-auto font-chathura">
+            <p className="text-3xl md:text-4xl text-gray-300 mb-8 max-w-2xl mx-auto font-chathura">
               Join thousands of students who are already building the next generation 
               of human-AI collaboration and cognitive enhancement.
             </p>

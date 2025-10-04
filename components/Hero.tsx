@@ -24,7 +24,7 @@ export default function Hero() {
             <span className="gradient-text font-mono-display">Minds and Machines</span>
           </h1>
           
-          <p className="text-2xl sm:text-3xl md:text-4xl text-gray-300 leading-relaxed animate-fade-in-delay mb-8 sm:mb-12 px-4 font-chathura">
+          <p className="text-3xl sm:text-4xl md:text-5xl text-gray-300 leading-relaxed animate-fade-in-delay mb-8 sm:mb-12 px-4 font-chathura">
             Empowering future thinkers to navigate between biology and technology.
           </p>
 
