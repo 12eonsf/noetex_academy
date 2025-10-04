@@ -108,7 +108,7 @@ function BrainShell({
   )
 }
 
-function PulseTube({ curve, speed = 0.12, width = 0.008, color = "#7c3aed" }: {
+function PulseTube({ curve, speed = 0.08, width = 0.012, color = "#7c3aed" }: {
   curve: THREE.Curve<THREE.Vector3>
   speed?: number
   width?: number
@@ -121,7 +121,7 @@ function PulseTube({ curve, speed = 0.12, width = 0.008, color = "#7c3aed" }: {
   
   useFrame((_, dt) => (uniforms.uTime.value += dt * speed))
   
-  const geo = useMemo(() => new THREE.TubeGeometry(curve, 120, width, 8, false), [curve, width])
+  const geo = useMemo(() => new THREE.TubeGeometry(curve, 200, width, 16, false), [curve, width])
   
   return (
     <mesh geometry={geo}>
@@ -144,9 +144,10 @@ function PulseTube({ curve, speed = 0.12, width = 0.008, color = "#7c3aed" }: {
           void main(){
             float head = fract(uTime);
             float d = abs(vU - head);
-            float trail = smoothstep(0.25, 0.0, d);
-            vec3 col = mix(vec3(0.0), uColor, 0.6 + trail * 0.6);
-            gl_FragColor = vec4(col, trail);
+            float trail = smoothstep(0.4, 0.0, d) * smoothstep(0.0, 0.1, d);
+            float glow = exp(-d * 8.0) * 0.8;
+            vec3 col = mix(vec3(0.0), uColor, 0.4 + trail * 0.8 + glow * 0.4);
+            gl_FragColor = vec4(col, trail + glow * 0.6);
           }
         `}
       />
@@ -154,11 +155,11 @@ function PulseTube({ curve, speed = 0.12, width = 0.008, color = "#7c3aed" }: {
   )
 }
 
-function NeuralNetwork({ numCurves = 14, radius = 0.95 }) {
+function NeuralNetwork({ numCurves = 18, radius = 0.95 }) {
   const curves = useMemo(() => {
     const randPoint = () => new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * radius)
     return Array.from({ length: numCurves }, () => 
-      new THREE.CatmullRomCurve3(Array.from({ length: 4 }, randPoint))
+      new THREE.CatmullRomCurve3(Array.from({ length: 6 }, randPoint))
     )
   }, [numCurves, radius])
   
@@ -168,8 +169,8 @@ function NeuralNetwork({ numCurves = 14, radius = 0.95 }) {
         <PulseTube 
           key={i} 
           curve={c} 
-          speed={0.09 + (i % 5) * 0.02} 
-          width={0.01} 
+          speed={0.06 + (i % 7) * 0.015} 
+          width={0.008 + (i % 3) * 0.004} 
         />
       ))}
     </group>
@@ -222,7 +223,7 @@ function BrainScene() {
       <pointLight position={[-3, -2, 2]} intensity={26} color="#7c3aed" distance={10} decay={2} />
       <group rotation={[0.1, 0.6, 0]}>
         <BrainShell noiseAmp={0.22} />
-        <NeuralNetwork numCurves={16} />
+        <NeuralNetwork numCurves={20} />
         <Particles />
       </group>
       <OrbitControls enablePan={false} minDistance={3} maxDistance={6} />
