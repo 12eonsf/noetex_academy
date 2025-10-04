@@ -17,7 +17,6 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '/' },
     { name: 'Programs', href: '/programs' },
     { name: 'Faculty', href: '/faculty' },
     { name: 'Lab', href: '/lab' },
