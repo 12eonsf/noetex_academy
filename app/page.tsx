@@ -89,6 +89,34 @@ export default function Home() {
       coverImage: "/courses/brain-summit.jpg",
       instructor: "Speakers from: University of Cambridge, University of Oxford, Peking University, King's College London",
       type: "Conference"
+    },
+    {
+      title: "Understanding Intelligent Agents",
+      description: "This workshop explores cutting-edge reasoning techniques in AI and agents, focusing on Chain of Thought (CoT) and the ReAct framework.",
+      duration: "3 Hours",
+      tags: ["AI", "Machine Learning", "Reasoning"],
+      href: "/programs/intelligent-agents",
+      featured: false,
+      format: "In-person",
+      startDate: "August 23, 2025",
+      location: "King's College London",
+      coverImage: "/courses/placeholder-workshop-1.jpg",
+      instructor: "Speaker from: Imperial College",
+      type: "Workshop"
+    },
+    {
+      title: "Future Tools, Real Results: AI Filmmaking & Agentic Browsing",
+      description: "From creating your first AI-generated short film to exploring agentic browsing, these two hands-on workshops will guide you to bring your ideas to life and harness the power of intelligent tools for creativity and productivity.",
+      duration: "6 Hours",
+      tags: ["AI", "Creativity", "Productivity"],
+      href: "/programs/ai-filmmaking",
+      featured: false,
+      format: "In-person",
+      startDate: "August 22, 2025",
+      location: "King's College London",
+      coverImage: "/courses/placeholder-workshop-2.jpg",
+      instructor: "Workshop Leaders",
+      type: "Workshop"
     }
   ]
 
