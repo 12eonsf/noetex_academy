@@ -219,24 +219,23 @@ body::-webkit-scrollbar {
   animation: float 3s ease-in-out infinite 1s;
 }
 
-/* Static glitch effect - no animation */
+/* Subtle glitch effect with blue tones */
 .glitch-text {
   position: relative;
   color: #ffffff;
   text-shadow: 
-    2px 0 #ff0000,
-    -2px 0 #00ffff,
-    0 2px #ff00ff,
-    0 -2px #ffff00;
+    1px 0 #3b82f6,
+    -1px 0 #06b6d4,
+    0 1px #8b5cf6;
 }
 
 .glitch-text::before {
   content: 'Noetex Academy';
   position: absolute;
   top: 0;
-  left: 2px;
-  color: #ff0000;
-  opacity: 0.8;
+  left: 1px;
+  color: #3b82f6;
+  opacity: 0.3;
   z-index: -1;
 }
 
@@ -244,8 +243,8 @@ body::-webkit-scrollbar {
   content: 'Noetex Academy';
   position: absolute;
   top: 0;
-  left: -2px;
-  color: #00ffff;
-  opacity: 0.8;
+  left: -1px;
+  color: #06b6d4;
+  opacity: 0.3;
   z-index: -2;
 }
