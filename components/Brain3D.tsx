@@ -108,72 +108,74 @@ function BrainShell({
   )
 }
 
-function PulseTube({ curve, speed = 0.08, width = 0.012, color = "#7c3aed" }: {
-  curve: THREE.Curve<THREE.Vector3>
-  speed?: number
-  width?: number
-  color?: string
-}) {
-  const uniforms = useMemo(() => ({ 
-    uTime: { value: 0 }, 
-    uColor: { value: new THREE.Color(color) } 
-  }), [color])
+
+function SparklingParticles({ count = 120, radius = 1.1 }) {
+  const ref = useRef<THREE.Points>(null)
+  const uniforms = useMemo(() => ({ uTime: { value: 0 } }), [])
   
-  useFrame((_, dt) => (uniforms.uTime.value += dt * speed))
-  
-  const geo = useMemo(() => new THREE.TubeGeometry(curve, 200, width, 16, false), [curve, width])
-  
+  const positions = useMemo(() => {
+    const pos = new Float32Array(count * 3)
+    const sizes = new Float32Array(count)
+    for (let i = 0; i < count; i++) {
+      const v = new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * radius)
+      pos.set([v.x, v.y, v.z], i * 3)
+      sizes[i] = Math.random() * 0.02 + 0.005 // Random sizes between 0.005 and 0.025
+    }
+    return { positions: pos, sizes: sizes }
+  }, [count, radius])
+
+  useFrame(({ clock }) => {
+    if (ref.current) {
+      ref.current.rotation.y = clock.getElapsedTime() * 0.02
+      ref.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.01) * 0.1
+    }
+    uniforms.uTime.value = clock.getElapsedTime()
+  })
+
   return (
-    <mesh geometry={geo}>
+    <points ref={ref}>
+      <bufferGeometry>
+        <bufferAttribute 
+          attach="attributes-position" 
+          array={positions.positions} 
+          count={positions.positions.length / 3} 
+          itemSize={3} 
+        />
+        <bufferAttribute 
+          attach="attributes-size" 
+          array={positions.sizes} 
+          count={positions.sizes.length} 
+          itemSize={1} 
+        />
+      </bufferGeometry>
       <shaderMaterial
         transparent
         depthWrite={false}
         blending={THREE.AdditiveBlending}
-        uniforms={uniforms}
         vertexShader={`
-          varying float vU;
-          void main(){
-            vU = uv.x;
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          attribute float size;
+          varying float vAlpha;
+          uniform float uTime;
+          void main() {
+            vAlpha = 0.5 + 0.5 * sin(uTime * 2.0 + position.y * 10.0);
+            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+            gl_PointSize = size * (300.0 / -mvPosition.z);
+            gl_Position = projectionMatrix * mvPosition;
           }
         `}
         fragmentShader={`
+          varying float vAlpha;
           uniform float uTime;
-          uniform vec3 uColor;
-          varying float vU;
-          void main(){
-            float head = fract(uTime);
-            float d = abs(vU - head);
-            float trail = smoothstep(0.4, 0.0, d) * smoothstep(0.0, 0.1, d);
-            float glow = exp(-d * 8.0) * 0.8;
-            vec3 col = mix(vec3(0.0), uColor, 0.4 + trail * 0.8 + glow * 0.4);
-            gl_FragColor = vec4(col, trail + glow * 0.6);
+          void main() {
+            float dist = distance(gl_PointCoord, vec2(0.5));
+            float alpha = 1.0 - smoothstep(0.0, 0.5, dist);
+            alpha *= vAlpha;
+            gl_FragColor = vec4(0.8, 0.4, 1.0, alpha);
           }
         `}
+        uniforms={uniforms}
       />
-    </mesh>
-  )
-}
-
-function NeuralNetwork({ numCurves = 18, radius = 0.95 }) {
-  const curves = useMemo(() => {
-    const randPoint = () => new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * radius)
-    return Array.from({ length: numCurves }, () => 
-      new THREE.CatmullRomCurve3(Array.from({ length: 6 }, randPoint))
-    )
-  }, [numCurves, radius])
-  
-  return (
-    <group>
-      {curves.map((c, i) => (
-        <PulseTube 
-          key={i} 
-          curve={c} 
-          speed={0.06 + (i % 7) * 0.015} 
-          width={0.008 + (i % 3) * 0.004} 
-        />
-      ))}
-    </group>
+    </points>
   )
 }
 
@@ -223,7 +225,7 @@ function BrainScene() {
       <pointLight position={[-3, -2, 2]} intensity={26} color="#7c3aed" distance={10} decay={2} />
       <group rotation={[0.1, 0.6, 0]}>
         <BrainShell noiseAmp={0.22} />
-        <NeuralNetwork numCurves={20} />
+        <SparklingParticles count={150} />
         <Particles />
       </group>
       <OrbitControls enablePan={false} minDistance={3} maxDistance={6} />
