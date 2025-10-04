@@ -263,7 +263,7 @@ export default function Home() {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300">{benefit}</span>
+                  <span className="text-gray-300 font-futura-1">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -377,11 +377,11 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Ready to Shape the <span className="gradient-text">Future</span>?
             </h2>
-            <p className="text-3xl md:text-4xl text-gray-300 mb-8 max-w-2xl mx-auto font-futura-1">
+            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto font-futura-1">
               Join thousands of students who are already building the next generation 
               of human-AI collaboration and cognitive enhancement.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link
                 href="/apply"
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center space-x-2"
@@ -389,17 +389,19 @@ export default function Home() {
                 <span>Apply Now</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
-              <Link
-                href="/apply"
-                className="px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-futura-1 font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <span>Apply Now</span>
-                <Brain className="h-5 w-5" />
-              </Link>
             </div>
           </div>
         </div>
       </Section>
+
+      {/* Sliding NOETEX ACADEMY Text */}
+      <div className="relative overflow-hidden bg-noetex-black py-16">
+        <div className="animate-slide-left">
+          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400/20 to-purple-400/20 select-none whitespace-nowrap">
+            NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY
+          </h1>
+        </div>
+      </div>
     </div>
   )
 }

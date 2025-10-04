@@ -290,3 +290,17 @@ body::-webkit-scrollbar {
   opacity: 0.3;
   z-index: -2;
 }
+
+/* Sliding text animation */
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-left {
+  animation: slideLeft 20s linear infinite;
+}
