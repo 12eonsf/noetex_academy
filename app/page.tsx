@@ -136,7 +136,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Redefining <span className="gradient-text">Education</span>
             </h2>
-            <p className="text-3xl md:text-4xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-futura-1">
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-futura-1">
               We bridge the gap between neuroscience, AI, and social sciences to create 
               the next generation of interdisciplinary thinkers and innovators.
             </p>
@@ -183,7 +183,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Featured <span className="gradient-text">Programs</span>
             </h2>
-            <p className="text-3xl md:text-4xl text-gray-300 max-w-3xl mx-auto font-futura-1">
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-futura-1">
               Explore our cutting-edge programs designed to prepare you for the future of science and technology.
             </p>
           </div>
@@ -219,7 +219,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Past <span className="gradient-text">Programs</span>
             </h2>
-            <p className="text-3xl md:text-4xl text-gray-300 max-w-3xl mx-auto font-futura-1">
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-futura-1">
               Get inspired by what previous learners explored, built, and experienced across neuroscience, AI, and beyond.
             </p>
           </div>
@@ -301,7 +301,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
               Meet Our <span className="gradient-text">Faculty</span>
             </h2>
-            <p className="text-3xl md:text-4xl text-gray-300 max-w-3xl mx-auto font-futura-1">
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-futura-1">
               Learn from world-renowned experts who are pushing the boundaries of human knowledge.
             </p>
           </div>
