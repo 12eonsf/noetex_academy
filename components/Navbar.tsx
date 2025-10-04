@@ -35,8 +35,8 @@ export default function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Brand */}
-          <Link href="/" className="flex items-center space-x-2 flex-shrink-0 max-w-[60%] sm:max-w-none">
-                <span className="text-sm sm:text-lg md:text-xl font-brand-3 text-white overflow-hidden whitespace-nowrap uppercase">
+          <Link href="/" className="flex items-center space-x-2 flex-shrink-0 max-w-[50%] sm:max-w-[60%] md:max-w-none">
+                <span className="text-xs sm:text-sm md:text-lg lg:text-xl font-brand-3 text-white overflow-hidden whitespace-nowrap uppercase">
                   Noetex Academy
                 </span>
           </Link>
@@ -64,10 +64,10 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 flex-shrink-0 ml-3 sm:ml-5 mr-1"
+            className="md:hidden p-1.5 flex-shrink-0 ml-2 sm:ml-3"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6 text-white" /> : <AlignJustify className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
+            {isOpen ? <X className="h-4 w-4 sm:h-5 sm:w-5 text-white" /> : <AlignJustify className="h-4 w-4 sm:h-5 sm:w-5 text-white" />}
           </button>
         </div>
 
