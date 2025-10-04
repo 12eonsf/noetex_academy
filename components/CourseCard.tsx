@@ -112,7 +112,7 @@ export default function CourseCard({
             {/* Type Badge */}
             {type && (
               <div className="mb-2">
-                <span className="inline-block px-3 py-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold rounded-full font-futura-1">
+                <span className="inline-block text-indigo-300 text-xs font-semibold font-futura-1 border-b border-indigo-400/50 pb-1">
                   {type}
                 </span>
               </div>
