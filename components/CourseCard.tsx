@@ -79,31 +79,31 @@ export default function CourseCard({
                 // Regular Program: Normal overlay
                 <>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  {/* Hours Badge */}
-                  {hours && (
-                    <div className="absolute top-3 left-3">
-                      <div className="bg-black/20 backdrop-blur-sm border border-indigo-400/50 text-white px-3 py-1.5 rounded-lg relative overflow-hidden inline-block">
-                        {/* Gradient border effect */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/30 to-purple-400/30 rounded-lg -z-10" />
-                        {/* Text shadow for better readability */}
-                        <span className="text-lg font-bold relative z-10 drop-shadow-lg">{hours}</span>
-                      </div>
-                    </div>
-                  )}
+                      {/* Hours Badge */}
+                      {hours && (
+                        <div className="absolute top-3 left-3">
+                          <div className="bg-black/40 backdrop-blur-md border border-indigo-400/50 text-white px-3 py-1.5 rounded-lg relative overflow-hidden inline-block">
+                            {/* Gradient border effect */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/30 to-purple-400/30 rounded-lg -z-10" />
+                            {/* Text shadow for better readability */}
+                            <span className="text-lg font-bold relative z-10 drop-shadow-lg">{hours}</span>
+                          </div>
+                        </div>
+                      )}
                 </>
               )}
 
-              {/* Completed Badge for Past Programs - on cover image */}
-              {isPastProgram && (
-                <div className="absolute top-3 right-3">
-                  <div className="bg-blue-500/20 backdrop-blur-sm border border-blue-400/50 text-white px-3 py-1.5 rounded-lg relative overflow-hidden inline-block">
-                    {/* Gradient border effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-indigo-400/30 rounded-lg -z-10" />
-                    {/* Text shadow for better readability */}
-                    <span className="text-xs font-bold relative z-10 drop-shadow-lg">Completed</span>
-                  </div>
-                </div>
-              )}
+                  {/* Completed Badge for Past Programs - on cover image */}
+                  {isPastProgram && (
+                    <div className="absolute top-3 right-3">
+                      <div className="bg-transparent border border-blue-400 text-white px-3 py-1.5 rounded-lg relative overflow-hidden inline-block">
+                        {/* Blue glow effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-lg -z-10" />
+                        {/* Text shadow for better readability */}
+                        <span className="text-xs font-bold relative z-10 drop-shadow-lg">Completed</span>
+                      </div>
+                    </div>
+                  )}
             </div>
           )}
 
