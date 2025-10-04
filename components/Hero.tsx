@@ -15,8 +15,8 @@ export default function Hero() {
       </div>
 
 
-      {/* Main Content - Transparent background to show 3D brain */}
-      <div className="relative z-10 container-custom min-h-screen flex items-end justify-center lg:justify-start px-4 sm:px-6 lg:px-8 pb-16 lg:pb-0 lg:items-center pt-20 lg:pt-0">
+      {/* Main Content - Semi-transparent background to show 3D brain */}
+      <div className="relative z-10 container-custom min-h-screen flex items-end justify-center lg:justify-start px-4 sm:px-6 lg:px-8 pb-16 lg:pb-0 lg:items-center pt-20 lg:pt-0 bg-gradient-to-br from-noetex-black/80 via-noetex-black/60 to-noetex-indigo/40 lg:bg-gradient-to-r lg:from-noetex-black/90 lg:via-noetex-black/80 lg:to-transparent">
         <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0 w-full lg:max-w-2xl lg:pr-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-mono-display leading-tight animate-fade-in mb-6 sm:mb-8 px-2">
             Learning Across

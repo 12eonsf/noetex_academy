@@ -60,7 +60,7 @@ function BrainShell({
   color = new THREE.Color("#4a55b1"), 
   timeScale = 0.15, 
   noiseAmp = 0.22, 
-  shellOpacity = 0.28 
+  shellOpacity = 0.6 
 }) {
   const uniforms = useMemo(() => ({
     uTime: { value: 0 },
@@ -256,10 +256,10 @@ function Particles({ count = 400, radius = 1.2 }) {
         />
       </bufferGeometry>
       <pointsMaterial 
-        size={0.01} 
+        size={0.02} 
         color={"#8b5cf6"} 
         transparent 
-        opacity={0.35} 
+        opacity={0.8} 
         depthWrite={false} 
       />
     </points>
@@ -297,7 +297,6 @@ function BrainScene() {
         gl={{ alpha: true, antialias: true }}
         style={{ background: 'transparent' }}
       >
-        <color attach="background" args={["transparent"]} />
         <ambientLight intensity={0.2} />
         <pointLight position={[3, 3, 2]} intensity={40} color="#4a55b1" distance={10} decay={2} />
         <pointLight position={[-3, -2, 2]} intensity={26} color="#7c3aed" distance={10} decay={2} />
