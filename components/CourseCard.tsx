@@ -115,7 +115,7 @@ export default function CourseCard({
               </div>
             )}
             {!isPastProgram && (
-              <h3 className="text-xl font-futura-1 text-white mb-2">
+              <h3 className="text-xl font-futura-1 font-bold text-white mb-2">
                 {title}
               </h3>
             )}
