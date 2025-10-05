@@ -2,7 +2,6 @@ import Hero from '@/components/Hero'
 import Section from '@/components/Section'
 import CourseCard from '@/components/CourseCard'
 import MentorCard from '@/components/MentorCard'
-import RedefiningEducation from '@/components/RedefiningEducation'
 import { Brain, Zap, Users, Award, Quote, Star, ArrowRight, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 
@@ -188,8 +187,52 @@ export default function Home() {
     <div className="min-h-screen">
       <Hero />
       
-      {/* Redefining Education Section */}
-      <RedefiningEducation />
+      {/* About Section */}
+      <Section id="about" className="bg-gradient-to-b from-noetex-black to-noetex-black/50">
+        <div className="container-custom">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
+              Redefining <span className="gradient-text">Education</span>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-futura-1">
+              We bridge the gap between neuroscience, AI, and social sciences to create 
+              the next generation of interdisciplinary thinkers and innovators.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Brain,
+                title: "Neuroscience First",
+                description: "Understanding the brain is the foundation of all human knowledge and AI development."
+              },
+              {
+                icon: Zap,
+                title: "AI Integration",
+                description: "Learn how artificial intelligence can enhance and augment human cognitive capabilities."
+              },
+              {
+                icon: Users,
+                title: "Social Impact",
+                description: "Apply your knowledge to solve real-world problems and create positive social change."
+              }
+            ].map((item, index) => (
+              <div
+                key={item.title}
+                className="text-center glass-card p-8 animate-fade-in-delay"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <item.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-futura-1 mb-4">{item.title}</h3>
+                <p className="text-gray-300">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
 
       {/* Programs Section */}
       <Section id="programs" className="bg-gradient-to-b from-noetex-black/50 to-noetex-black">
