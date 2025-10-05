@@ -189,27 +189,97 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .tower-3d-large,
+  .tree-3d-large,
+  .network-3d-large {
+    transform: scale(0.8);
+  }
+}
+
 @media (max-width: 768px) {
   .tower-3d-large,
   .tree-3d-large,
   .network-3d-large {
-    transform: scale(0.7);
+    transform: scale(0.6);
   }
   
-  .tower-base-large,
-  .tower-level-large,
+  .tower-base-large {
+    width: 60px;
+    height: 90px;
+  }
+  
+  .tower-level-large {
+    width: 50px;
+    height: 75px;
+  }
+  
   .tower-top-large {
-    transform: scale(0.8);
+    width: 40px;
+    height: 60px;
   }
   
-  .tree-trunk-large,
+  .tree-trunk-large {
+    width: 30px;
+    height: 120px;
+  }
+  
   .tree-branch-large {
-    transform: scale(0.8);
+    width: 45px;
+    height: 6px;
   }
   
-  .network-node-large,
+  .network-node-large {
+    width: 18px;
+    height: 18px;
+  }
+  
   .network-connection-large {
-    transform: scale(0.8);
+    width: 60px;
+    height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tower-3d-large,
+  .tree-3d-large,
+  .network-3d-large {
+    transform: scale(0.5);
+  }
+  
+  .tower-base-large {
+    width: 50px;
+    height: 75px;
+  }
+  
+  .tower-level-large {
+    width: 40px;
+    height: 60px;
+  }
+  
+  .tower-top-large {
+    width: 30px;
+    height: 45px;
+  }
+  
+  .tree-trunk-large {
+    width: 25px;
+    height: 100px;
+  }
+  
+  .tree-branch-large {
+    width: 35px;
+    height: 5px;
+  }
+  
+  .network-node-large {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .network-connection-large {
+    width: 50px;
+    height: 2px;
   }
 }
 
@@ -229,4 +299,156 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 3D Object Alignment and Positioning */
+.tower-3d-large,
+.tree-3d-large,
+.network-3d-large {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+/* Tower specific positioning */
+.tower-3d-large .tower-base-large {
+  position: relative;
+  z-index: 1;
+}
+
+.tower-3d-large .tower-level-large {
+  position: relative;
+  z-index: 2;
+  margin-top: -10px;
+}
+
+.tower-3d-large .tower-top-large {
+  position: relative;
+  z-index: 3;
+  margin-top: -10px;
+}
+
+/* Tree specific positioning */
+.tree-3d-large .tree-trunk-large {
+  position: relative;
+  z-index: 1;
+}
+
+.tree-3d-large .tree-branch-large {
+  position: absolute;
+  z-index: 2;
+}
+
+.tree-3d-large .tree-branch-large:nth-child(2) {
+  top: 20px;
+  left: -15px;
+  transform: rotate(-45deg);
+}
+
+.tree-3d-large .tree-branch-large:nth-child(3) {
+  top: 40px;
+  right: -15px;
+  transform: rotate(45deg);
+}
+
+.tree-3d-large .tree-branch-large:nth-child(4) {
+  top: 60px;
+  left: -15px;
+  transform: rotate(-30deg);
+}
+
+.tree-3d-large .tree-branch-large:nth-child(5) {
+  top: 80px;
+  right: -15px;
+  transform: rotate(30deg);
+}
+
+/* Network specific positioning */
+.network-3d-large {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.network-3d-large .network-node-large {
+  position: absolute;
+  z-index: 2;
+}
+
+.network-3d-large .network-node-large:nth-child(1) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.network-3d-large .network-node-large:nth-child(2) {
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.network-3d-large .network-node-large:nth-child(3) {
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+}
+
+.network-3d-large .network-node-large:nth-child(4) {
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.network-3d-large .network-node-large:nth-child(5) {
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+}
+
+.network-3d-large .network-connection-large {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform-origin: left center;
+}
+
+.network-3d-large .network-connection-large:nth-child(6) {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.network-3d-large .network-connection-large:nth-child(7) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.network-3d-large .network-connection-large:nth-child(8) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.network-3d-large .network-connection-large:nth-child(9) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Mobile specific improvements */
+@media (max-width: 768px) {
+  .tower-3d-large,
+  .tree-3d-large,
+  .network-3d-large {
+    margin: 0 auto;
+  }
+  
+  .network-3d-large {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .network-3d-large {
+    width: 120px;
+    height: 120px;
+  }
 }

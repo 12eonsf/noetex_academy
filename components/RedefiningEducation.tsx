@@ -48,8 +48,8 @@ export default function RedefiningEducation() {
 
   return (
     <section ref={containerRef} className="relative min-h-screen bg-gradient-to-b from-[#0b0d17] to-black overflow-hidden">
-      {/* Background 3D Objects */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Background 3D Objects - Hidden on mobile */}
+      <div className="absolute inset-0 pointer-events-none hidden lg:block">
         {/* Tower - Cognitive Architecture */}
         <motion.div 
           className="absolute top-1/2 right-1/4 transform -translate-y-1/2"
@@ -124,32 +124,33 @@ export default function RedefiningEducation() {
         </div>
 
         {/* Interactive Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[600px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[600px]">
           {/* Left Side - Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 lg:space-y-8">
             {slides.map((slide, index) => (
               <motion.div
                 key={slide.id}
-                className={`p-8 rounded-xl transition-all duration-500 ${
+                className={`p-6 lg:p-8 rounded-xl transition-all duration-500 ${
                   activeSlide === index 
                     ? 'glass-card glass-card-hover bg-gradient-to-r from-indigo-500/20 to-purple-500/20' 
                     : 'opacity-50'
                 }`}
                 animate={{
-                  x: activeSlide === index ? 0 : -50,
-                  opacity: activeSlide === index ? 1 : 0.5
+                  x: activeSlide === index ? 0 : -30,
+                  opacity: activeSlide === index ? 1 : 0.5,
+                  scale: activeSlide === index ? 1.02 : 1
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-mono-display mb-2">{slide.title}</h3>
-                <p className="text-indigo-300 font-futura-1 mb-4">{slide.subtitle}</p>
-                <p className="text-gray-300 font-futura-1 leading-relaxed">{slide.description}</p>
+                <h3 className="text-xl lg:text-2xl font-mono-display mb-2">{slide.title}</h3>
+                <p className="text-indigo-300 font-futura-1 mb-3 lg:mb-4 text-sm lg:text-base">{slide.subtitle}</p>
+                <p className="text-gray-300 font-futura-1 leading-relaxed text-sm lg:text-base">{slide.description}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Right Side - 3D Visualization */}
-          <div className="relative h-[600px] flex items-center justify-center">
+          <div className="relative h-[400px] lg:h-[600px] flex items-center justify-center">
             <motion.div
               className="w-full h-full flex items-center justify-center"
               animate={{
@@ -194,6 +195,21 @@ export default function RedefiningEducation() {
               )}
             </motion.div>
           </div>
+        </div>
+
+        {/* Mobile Navigation Dots */}
+        <div className="lg:hidden flex justify-center mt-8 space-x-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                activeSlide === index 
+                  ? 'bg-indigo-400 scale-125' 
+                  : 'bg-gray-600'
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
