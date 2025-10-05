@@ -1,6 +1,4 @@
 'use client'
-
-import Link from 'next/link'
 import Image from 'next/image'
 import { Clock, Users, ArrowRight, Calendar, MapPin, Video, Users2, Radio, Building } from 'lucide-react'
 
@@ -31,7 +29,7 @@ export default function CourseCard({
   duration,
   students,
   tags,
-  href,
+  href: _href,
   featured = false,
   featuredText,
   format,
@@ -49,7 +47,6 @@ export default function CourseCard({
     <div
       className={`relative group ${featured ? 'lg:col-span-2' : ''}`}
     >
-      <Link href={href}>
         <div className={`glass-card glass-card-hover p-6 h-full ${featured ? 'neuron-glow' : ''}`}>
           {/* Featured Badge */}
           {featured && (
@@ -206,7 +203,6 @@ export default function CourseCard({
             <ArrowRight className="h-4 w-4 text-indigo-400" />
           </div>
         </div>
-      </Link>
     </div>
   )
 }

@@ -27,7 +27,7 @@ export default function Home() {
       type: "Course"
     },
     {
-      title: "Neuroscience Winter School",
+      title: "The Noetex Society Winter Program: Exploring Life and Intelligence",
       description: "Immersive course helping students master fundamental and research skills in neuroscience and artificial intelligence, with opportunities to exchange ideas with students and scholars from around the world.",
       duration: "10 Days",
       students: 10,
