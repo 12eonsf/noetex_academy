@@ -8,10 +8,11 @@ export default function Footer() {
 
   const footerLinks = {
     programs: [
-      { name: 'Neuroscience', href: '/programs#neuroscience' },
-      { name: 'AI & Machine Learning', href: '/programs#ai' },
-      { name: 'Life Sciences', href: '/programs#life-sciences' },
-      { name: 'Social Sciences', href: '/programs#social-sciences' },
+      { name: 'Courses', href: '/programs#courses' },
+      { name: 'Workshops', href: '/programs#workshops' },
+      { name: 'Schools', href: '/programs#schools' },
+      { name: 'London Summit', href: '/programs#london-summit' },
+      { name: 'Conferences', href: '/programs#conferences' },
     ],
     resources: [
       { name: 'Faculty', href: '/faculty' },
@@ -23,6 +24,7 @@ export default function Footer() {
       { name: 'FAQ', href: '/faq' },
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' },
+      { name: 'About Us', href: '/about' },
     ],
   }
 
