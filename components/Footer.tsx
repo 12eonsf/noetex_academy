@@ -18,6 +18,9 @@ export default function Footer() {
       { name: 'Faculty', href: '/faculty' },
       { name: 'Research Lab', href: '/lab' },
       { name: 'Blog', href: '/blog' },
+      { name: 'Events', href: 'https://luma.com/user/neureality', external: true },
+      { name: 'Community', href: '/community' },
+      { name: 'Podcast', href: 'https://open.spotify.com/show/1Ya8rAqwYNNdybDpf0JJXe?si=051ccaf4ef00415b', external: true },
       { name: 'Apply', href: '/apply' },
     ],
     support: [
@@ -94,12 +97,23 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

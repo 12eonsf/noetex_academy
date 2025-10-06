@@ -20,9 +20,6 @@ export default function Navbar() {
     { name: 'Programs', href: '/programs' },
     { name: 'Faculty', href: '/faculty' },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'Events', href: 'https://luma.com/user/neureality', external: true },
-    { name: 'Podcast', href: 'https://open.spotify.com/show/1Ya8rAqwYNNdybDpf0JJXe?si=051ccaf4ef00415b', external: true },
-    { name: 'Community', href: '/community' },
     { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' },
   ]
