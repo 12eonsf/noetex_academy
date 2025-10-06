@@ -159,7 +159,7 @@ export default function RedefiningEducation() {
       <video
         ref={videoRef}
         className="fixed inset-0 w-full h-full object-cover object-left md:object-center -z-10"
-        src="https://neu-reality.com/wp-content/uploads/2025/10/Noetex-Video.mp4"
+        src="/Noetex Video.mp4"
         autoPlay
         loop
         muted
