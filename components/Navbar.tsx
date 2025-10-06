@@ -43,27 +43,14 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              item.external ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors duration-200 relative group font-brand-3"
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300" />
-                </a>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 relative group font-brand-3"
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300" />
-                </Link>
-              )
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-300 hover:text-white transition-colors duration-200 relative group font-brand-3"
+              >
+                {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300" />
+              </Link>
             ))}
             <Link
               href="/apply"
@@ -97,27 +84,14 @@ export default function Navbar() {
           <div className="md:hidden mt-4 glass-card p-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                item.external ? (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsOpen(false)}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 py-2 font-brand-3"
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 py-2 font-brand-3"
-                  >
-                    {item.name}
-                  </Link>
-                )
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-300 hover:text-white transition-colors duration-200 py-2 font-brand-3"
+                >
+                  {item.name}
+                </Link>
               ))}
               <Link
                 href="/apply"
