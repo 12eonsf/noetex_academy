@@ -128,7 +128,7 @@ export default function RedefiningEducation() {
         console.log('Video can play')
         tryPlay()
       }
-      const onError = (e) => console.log('Video error:', e)
+      const onError = (e: Event) => console.log('Video error:', e)
       
       v.addEventListener('loadstart', onLoadStart)
       v.addEventListener('canplay', onCanPlay)
