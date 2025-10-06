@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'heading': ['Orbitron', 'Inter', 'system-ui', 'sans-serif'],
+        'heading': ['var(--font-orbitron)', 'Inter', 'system-ui', 'sans-serif'],
         'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
-        'display': ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
-        'body': ['Lato', 'Inter', 'system-ui', 'sans-serif'],
+        'display': ['var(--font-space-grotesk)', 'Inter', 'system-ui', 'sans-serif'],
+        'body': ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         'noetex-black': '#0c0c0e',

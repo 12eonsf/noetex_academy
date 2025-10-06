@@ -9,15 +9,15 @@ gsap.registerPlugin(ScrollTrigger)
 const sections = [
   {
     title: 'Cognitive Architecture',
-    text: 'Building the structures of understanding. We train minds to map complexity, connect insights across fields, and construct new conceptual systems for the age of collective intelligence.',
+    text: 'Building the structures of understanding. We train minds to map complexity, connect insights across fields, and construct new conceptual systems for the next paradigm shift in technology.',
   },
   {
     title: 'Emerging Disciplines',
-    text: 'Learning at the frontiers of mind and matter. Our programs weave together neuroscience, artificial intelligence, and complex adaptive systems — disciplines redefining how we understand cognition, society, and the universe.',
+    text: 'Learning at the frontiers of mind and matter. Our programs weave together neuroscience, artificial intelligence, cognitive science, and social sciences — disciplines redefining how we understand cognition, society, and the universe.',
   },
   {
-    title: 'Interdisciplinary Evolution',
-    text: 'Education at Noetex grows with the learner, the machine, and the world — preparing thinkers to lead the next transformation of knowledge, cognition, and collective intelligence.',
+    title: 'Resonant Fields',
+    text: 'Education at Noetex grows with the learner, the machine, and the world — preparing thinkers to lead the next transformation of knowledge and intelligence.',
   },
 ]
 

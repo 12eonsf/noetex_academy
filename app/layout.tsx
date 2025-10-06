@@ -4,7 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron' })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
 const audiowide = Audiowide({ subsets: ['latin'], weight: '400', variable: '--font-audiowide' })
@@ -44,7 +44,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} ${orbitron.variable} ${spaceGrotesk.variable} ${audiowide.variable} ${majorMono.variable} bg-noetex-black text-white antialiased`}>
+      <body className={`${inter.variable} ${orbitron.variable} ${spaceGrotesk.variable} ${audiowide.variable} ${majorMono.variable} bg-noetex-black text-white antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-1">
