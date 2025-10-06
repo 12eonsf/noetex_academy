@@ -95,7 +95,7 @@ body::-webkit-scrollbar {
   }
   
   .font-brand-3 {
-    font-family: var(--font-audiowide), var(--font-orbitron), sans-serif;
+    font-family: var(--font-space-grotesk), var(--font-orbitron), sans-serif;
     font-weight: 400;
     letter-spacing: 0.05em;
   }
