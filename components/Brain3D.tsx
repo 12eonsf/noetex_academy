@@ -271,7 +271,7 @@ function Particles({ count = 120, radius = 1.2 }) {
   )
 }
 
-function BrainCore({ count = 25, radius = 0.3 }) {
+function BrainCore({ count = 25, radius = 0.8 }) {
   const ref = useRef<THREE.Points>(null)
   const uniforms = useMemo(() => ({ 
     uTime: { value: 0 }
@@ -285,7 +285,7 @@ function BrainCore({ count = 25, radius = 0.3 }) {
     for (let i = 0; i < count; i++) {
       const v = new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * radius)
       pos.set([v.x, v.y, v.z], i * 3)
-      sizes[i] = Math.random() * 0.15 + 0.08 // Core particles: 0.08 to 0.23 (larger than regular)
+      sizes[i] = Math.random() * 0.4 + 0.2 // Core particles: 0.2 to 0.6 (much larger)
       
       // Deep blue core with slight variations
       const blueIntensity = 0.6 + Math.random() * 0.3
@@ -341,12 +341,12 @@ function BrainCore({ count = 25, radius = 0.3 }) {
           void main() {
             vColor = color;
             
-            // Breathing effect for core
-            float breath = 0.6 + 0.4 * sin(uTime * 1.2 + position.y * 3.0);
+            // Slower breathing effect for core
+            float breath = 0.7 + 0.3 * sin(uTime * 0.4 + position.y * 1.5);
             vAlpha = breath;
             
             vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-            gl_PointSize = size * (400.0 / -mvPosition.z) * breath;
+            gl_PointSize = size * (500.0 / -mvPosition.z) * breath;
             gl_Position = projectionMatrix * mvPosition;
           }
         `}
@@ -397,7 +397,7 @@ function BrainScene() {
             <BrainShell noiseAmp={0.22} color="#1e3a8a" shellOpacity={0.4} />
             <SparklingParticles count={60} />
             <Particles />
-            <BrainCore count={25} radius={0.3} />
+            <BrainCore count={25} radius={0.8} />
           </group>
         </Canvas>
       </Suspense>
