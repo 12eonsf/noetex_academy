@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -85,9 +85,7 @@ export default function Navbar() {
             className="md:hidden p-1.5 flex-shrink-0 ml-2 sm:ml-3 text-white hover:text-indigo-400 transition-colors duration-300"
             aria-label="Toggle menu"
           >
-            <span className="text-2xl sm:text-3xl font-bold">
-              {isOpen ? '∞' : '≋'}
-            </span>
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
