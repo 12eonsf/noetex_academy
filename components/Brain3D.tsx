@@ -255,9 +255,9 @@ function Particles({ count = 120, radius = 1.2 }) {
       </bufferGeometry>
       <pointsMaterial 
         size={0.03} 
-        color={"#ffffff"} 
+        color={"#1e3a8a"} 
         transparent 
-        opacity={0.6} 
+        opacity={0.4} 
         depthWrite={false} 
       />
     </points>
@@ -285,10 +285,10 @@ function BrainScene() {
           }}
         >
           <ambientLight intensity={0.2} />
-          <pointLight position={[3, 3, 2]} intensity={40} color="#ffffff" distance={10} decay={2} />
-          <pointLight position={[-3, -2, 2]} intensity={26} color="#f8fafc" distance={10} decay={2} />
+          <pointLight position={[3, 3, 2]} intensity={40} color="#1e3a8a" distance={10} decay={2} />
+          <pointLight position={[-3, -2, 2]} intensity={26} color="#1e3a8a" distance={10} decay={2} />
           <group rotation={[0.1, 0.6, 0]}>
-            <BrainShell noiseAmp={0.22} color="#ffffff" />
+            <BrainShell noiseAmp={0.22} color="#1e3a8a" shellOpacity={0.4} />
             <SparklingParticles count={60} />
             <Particles />
           </group>
