@@ -85,15 +85,7 @@ export default function Navbar() {
             className="md:hidden p-1.5 flex-shrink-0 ml-2 sm:ml-3 text-white hover:text-indigo-400 transition-colors duration-300"
             aria-label="Toggle menu"
           >
-            {isOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <div className="flex flex-col space-y-1">
-                <div className="w-1 h-1 bg-current rounded-full"></div>
-                <div className="w-1 h-1 bg-current rounded-full"></div>
-                <div className="w-1 h-1 bg-current rounded-full"></div>
-              </div>
-            )}
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
