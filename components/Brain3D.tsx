@@ -83,7 +83,6 @@ function BrainShell({
         transparent
         depthWrite={false}
         blending={THREE.AdditiveBlending}
-        side={THREE.DoubleSide}
             vertexShader={`
               uniform float uTime;
               uniform float uAmp;
@@ -104,21 +103,8 @@ function BrainShell({
           varying float vNoise;
           void main(){
             float glow = smoothstep(0.0, 1.0, vNoise * 0.5 + 0.5);
-            
-            // Create gradient halo effect
-            float halo = 1.0 - smoothstep(0.0, 0.8, length(gl_PointCoord - 0.5) * 2.0);
-            float innerGlow = smoothstep(0.3, 0.7, glow);
-            float outerGlow = smoothstep(0.0, 0.5, glow);
-            
-            // Mix colors for gradient effect
-            vec3 innerColor = mix(uColor, vec3(1.0, 1.0, 1.0), 0.3);
-            vec3 outerColor = mix(uColor * 0.6, vec3(0.0), 0.4);
-            
-            vec3 finalColor = mix(outerColor, innerColor, innerGlow);
-            finalColor += uColor * halo * 0.4;
-            
-            float alpha = uOpacity * (0.6 + glow * 0.4 + halo * 0.3);
-            gl_FragColor = vec4(finalColor, alpha);
+            vec3 col = mix(vec3(0.0), uColor, 0.6 + glow * 0.4);
+            gl_FragColor = vec4(col, uOpacity * (0.7 + glow * 0.3));
           }
         `}
         uniforms={uniforms}
