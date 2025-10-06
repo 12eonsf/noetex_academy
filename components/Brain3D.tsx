@@ -271,103 +271,6 @@ function Particles({ count = 120, radius = 1.2 }) {
   )
 }
 
-function BrainCore({ count = 25, radius = 0.8 }) {
-  const ref = useRef<THREE.Points>(null)
-  const uniforms = useMemo(() => ({ 
-    uTime: { value: 0 }
-  }), [])
-  
-  const positions = useMemo(() => {
-    const pos = new Float32Array(count * 3)
-    const sizes = new Float32Array(count)
-    const colors = new Float32Array(count * 3)
-    
-    for (let i = 0; i < count; i++) {
-      const v = new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * radius)
-      pos.set([v.x, v.y, v.z], i * 3)
-      sizes[i] = Math.random() * 0.4 + 0.2 // Core particles: 0.2 to 0.6 (much larger)
-      
-      // Deep blue core with slight variations
-      const blueIntensity = 0.6 + Math.random() * 0.3
-      const redIntensity = 0.1 + Math.random() * 0.2
-      colors.set([redIntensity, blueIntensity * 0.3, blueIntensity], i * 3)
-    }
-    return { positions: pos, sizes: sizes, colors: colors }
-  }, [count, radius])
-
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime()
-    uniforms.uTime.value = t
-    
-    if (ref.current) {
-      // Gentle core rotation
-      ref.current.rotation.y = t * 0.008
-      ref.current.rotation.x = Math.sin(t * 0.005) * 0.03
-    }
-  })
-
-  return (
-    <points ref={ref}>
-      <bufferGeometry>
-        <bufferAttribute 
-          attach="attributes-position" 
-          array={positions.positions} 
-          count={positions.positions.length / 3} 
-          itemSize={3} 
-        />
-        <bufferAttribute 
-          attach="attributes-size" 
-          array={positions.sizes} 
-          count={positions.sizes.length} 
-          itemSize={1} 
-        />
-        <bufferAttribute 
-          attach="attributes-color" 
-          array={positions.colors} 
-          count={positions.colors.length / 3} 
-          itemSize={3} 
-        />
-      </bufferGeometry>
-      <shaderMaterial
-        transparent
-        depthWrite={false}
-        blending={THREE.AdditiveBlending}
-        vertexShader={`
-          attribute float size;
-          attribute vec3 color;
-          varying float vAlpha;
-          varying vec3 vColor;
-          uniform float uTime;
-          void main() {
-            vColor = color;
-            
-            // Slower breathing effect for core
-            float breath = 0.7 + 0.3 * sin(uTime * 0.4 + position.y * 1.5);
-            vAlpha = breath;
-            
-            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-            gl_PointSize = size * (500.0 / -mvPosition.z) * breath;
-            gl_Position = projectionMatrix * mvPosition;
-          }
-        `}
-        fragmentShader={`
-          varying float vAlpha;
-          varying vec3 vColor;
-          void main() {
-            float dist = distance(gl_PointCoord, vec2(0.5));
-            float alpha = 1.0 - smoothstep(0.0, 0.6, dist);
-            alpha *= vAlpha;
-            
-            // Soft glow effect
-            vec3 finalColor = vColor * 1.5;
-            gl_FragColor = vec4(finalColor, alpha);
-          }
-        `}
-        uniforms={uniforms}
-      />
-    </points>
-  )
-}
 
 
 function BrainScene() {
@@ -397,7 +300,6 @@ function BrainScene() {
             <BrainShell noiseAmp={0.22} color="#1e3a8a" shellOpacity={0.4} />
             <SparklingParticles count={60} />
             <Particles />
-            <BrainCore count={25} radius={0.8} />
           </group>
         </Canvas>
       </Suspense>
