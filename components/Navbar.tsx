@@ -64,13 +64,12 @@ export default function Navbar() {
             ))}
             <Link
               href="/apply"
-              className="px-4 py-2 rounded-lg bg-transparent border border-gradient-to-r from-indigo-400 to-purple-400 text-white hover:bg-white/10 transition-all duration-200 font-futura-1 flex items-center space-x-2"
+              className="px-4 py-2 rounded-lg bg-transparent text-white hover:bg-white/5 transition-all duration-200 font-futura-1 flex items-center space-x-2 relative"
               style={{
-                background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1))',
+                background: 'transparent',
+                border: '2px solid',
                 borderImage: 'linear-gradient(135deg, #6366f1, #a855f7) 1',
-                border: '1px solid transparent',
-                backgroundClip: 'padding-box',
-                position: 'relative'
+                borderRadius: '8px'
               }}
             >
               <span>Apply Now</span>
@@ -120,13 +119,12 @@ export default function Navbar() {
               <Link
                 href="/apply"
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2 rounded-lg bg-transparent text-white text-center hover:bg-white/10 transition-all duration-200 font-futura-1 flex items-center justify-center space-x-2"
+                className="px-4 py-2 rounded-lg bg-transparent text-white text-center hover:bg-white/5 transition-all duration-200 font-futura-1 flex items-center justify-center space-x-2 relative"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1))',
+                  background: 'transparent',
+                  border: '2px solid',
                   borderImage: 'linear-gradient(135deg, #6366f1, #a855f7) 1',
-                  border: '1px solid transparent',
-                  backgroundClip: 'padding-box',
-                  position: 'relative'
+                  borderRadius: '8px'
                 }}
               >
                 <span>Apply Now</span>
