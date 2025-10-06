@@ -156,8 +156,9 @@ function SparklingParticles({ count = 60, radius = 1.1 }) {
 
       useFrame(({ clock }) => {
         if (ref.current) {
-          ref.current.rotation.y = clock.getElapsedTime() * 0.01
-          ref.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.005) * 0.05
+          ref.current.rotation.y = clock.getElapsedTime() * 0.03
+          ref.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.01) * 0.1
+          ref.current.rotation.z = Math.cos(clock.getElapsedTime() * 0.008) * 0.05
         }
         uniforms.uTime.value = clock.getElapsedTime()
       })
@@ -241,6 +242,12 @@ function Particles({ count = 120, radius = 1.2 }) {
       useFrame(({ clock }) => {
         const t = clock.getElapsedTime()
         uniforms.uTime.value = t
+        
+        if (ref.current) {
+          ref.current.rotation.y = t * 0.02
+          ref.current.rotation.x = Math.sin(t * 0.008) * 0.08
+          ref.current.rotation.z = Math.cos(t * 0.006) * 0.03
+        }
       })
   
   return (
