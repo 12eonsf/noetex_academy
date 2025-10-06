@@ -1,0 +1,307 @@
+/* Fonts are now loaded via Next.js font optimization */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 隐藏滚动条 */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-noetex-black text-white font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-xl;
+  }
+  
+  .glass-card-hover {
+    @apply hover:bg-white/10 hover:border-white/20;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+  
+  .neuron-glow {
+    @apply relative;
+  }
+  
+  .neuron-glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/10 to-indigo-500/10 blur-sm -z-10;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Future-tech font styles - Using CSS variables */
+  .font-heading {
+    font-family: var(--font-orbitron), 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  
+  /* Alternative font options for brand text */
+  .font-brand-1 {
+    font-family: 'Exo 2', var(--font-orbitron), sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .font-brand-2 {
+    font-family: 'Rajdhani', var(--font-orbitron), sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  
+  .font-brand-3 {
+    font-family: var(--font-audiowide), var(--font-orbitron), sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+  
+  .font-brand-4 {
+    font-family: 'Share Tech Mono', 'JetBrains Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  
+  .font-display {
+    font-family: var(--font-space-grotesk), 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+  }
+
+  .font-mono-display {
+    font-family: var(--font-major-mono), 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+  }
+
+.font-chathura {
+  font-family: 'Chathura', var(--font-space-grotesk), sans-serif;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Alternative futuristic font options */
+.font-futura-1 {
+  font-family: var(--font-space-grotesk), 'Inter', sans-serif;
+  letter-spacing: 0.01em;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.font-futura-2 {
+  font-family: 'Source Code Pro', 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.font-futura-3 {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.font-futura-4 {
+  font-family: 'Roboto Mono', 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  line-height: 1.3;
+}
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-variant-ligatures: common-ligatures;
+  }
+  
+  
+  .font-body {
+    font-family: 'Lato', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-noetex-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-indigo-400 to-purple-400;
+}
+
+/* Neuron animation keyframes */
+@keyframes neuron-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.neuron-pulse {
+  animation: neuron-pulse 3s ease-in-out infinite;
+}
+
+/* Parallax effect */
+.parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 0.8s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 0.8s ease-out 0.4s both;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fade-in 0.8s ease-out 0.6s both;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-float-delay {
+  animation: float 3s ease-in-out infinite 1s;
+}
+
+/* Subtle glitch effect with blue tones */
+.glitch-text {
+  position: relative;
+  color: #ffffff;
+  text-shadow: 
+    1px 0 #3b82f6,
+    -1px 0 #06b6d4,
+    0 1px #8b5cf6;
+}
+
+.glitch-text::before {
+  content: 'Noetex Society';
+  position: absolute;
+  top: 0;
+  left: 1px;
+  color: #3b82f6;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.glitch-text::after {
+  content: 'Noetex Society';
+  position: absolute;
+  top: 0;
+  left: -1px;
+  color: #06b6d4;
+  opacity: 0.3;
+  z-index: -2;
+}
+
+    /* Sliding text animation - Infinite loop */
+    @keyframes slideLeft {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-slide-left {
+      animation: slideLeft 20s linear infinite;
+      animation-fill-mode: none;
+    }
