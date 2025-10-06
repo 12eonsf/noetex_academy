@@ -13,6 +13,7 @@ export default function Footer() {
       { name: 'Schools', href: '/programs#schools' },
       { name: 'London Summit', href: '/programs#london-summit' },
       { name: 'Conferences', href: '/programs#conferences' },
+      { name: 'Apply', href: '/apply' },
     ],
     resources: [
       { name: 'Faculty', href: '/faculty' },
@@ -21,7 +22,6 @@ export default function Footer() {
       { name: 'Events', href: 'https://luma.com/user/neureality', external: true },
       { name: 'Community', href: '/community' },
       { name: 'Podcast', href: 'https://open.spotify.com/show/1Ya8rAqwYNNdybDpf0JJXe?si=051ccaf4ef00415b', external: true },
-      { name: 'Apply', href: '/apply' },
     ],
     support: [
       { name: 'FAQ', href: '/faq' },
