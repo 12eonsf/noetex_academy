@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Brain, AlignJustify } from 'lucide-react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,9 +31,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Brand */}
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0 max-w-[50%] sm:max-w-[60%] md:max-w-none">
-                <span className="text-xs sm:text-sm md:text-lg lg:text-xl font-brand-3 text-white overflow-hidden whitespace-nowrap uppercase">
-                  Noetex Society
-                </span>
+            <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white hover:text-indigo-400 transition-colors duration-300">
+              ≋
+            </span>
+            <span className="text-xs sm:text-sm md:text-lg lg:text-xl font-brand-3 text-white overflow-hidden whitespace-nowrap uppercase">
+              Noetex Society
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -73,10 +75,12 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-1.5 flex-shrink-0 ml-2 sm:ml-3"
+            className="md:hidden p-1.5 flex-shrink-0 ml-2 sm:ml-3 text-white hover:text-indigo-400 transition-colors duration-300"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-4 w-4 sm:h-5 sm:w-5 text-white" /> : <AlignJustify className="h-4 w-4 sm:h-5 sm:w-5 text-white" />}
+            <span className="text-2xl sm:text-3xl font-bold">
+              {isOpen ? '∞' : '≋'}
+            </span>
           </button>
         </div>
 
