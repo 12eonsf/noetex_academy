@@ -4,7 +4,7 @@ import RedefiningEducation from '@/components/RedefiningEducation'
 import CourseCard from '@/components/CourseCard'
 import MentorCard from '@/components/MentorCard'
 import FieldsWeExplore from '@/components/FieldsWeExplore'
-import { Brain, Zap, Users, Award, Quote, Star, ArrowRight, CheckCircle } from 'lucide-react'
+import { Brain, Zap, Users, Award, Quote, Star, ArrowRight, ArrowUpRight, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Home() {
@@ -220,15 +220,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/programs"
-              className="inline-flex items-center space-x-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 font-futura-1"
-            >
-              <span>View All Programs</span>
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
+          {/* View All Programs button removed as requested */}
         </div>
       </Section>
 
@@ -257,6 +249,16 @@ export default function Home() {
                 <CourseCard {...program} isPastProgram={true} />
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/programs"
+              className="inline-flex items-center space-x-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 font-futura-1"
+            >
+              <span>View All Programs</span>
+              <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </Section>
@@ -406,7 +408,7 @@ export default function Home() {
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-futura-1 font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <span>Apply Now</span>
-                <ArrowRight className="h-5 w-5" />
+                <ArrowUpRight className="h-5 w-5" />
               </Link>
             </div>
           </div>
