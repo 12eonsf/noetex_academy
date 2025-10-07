@@ -114,6 +114,12 @@ export default function RedefiningEducation() {
     // Best-effort autoplay/resume on mount and when tab becomes visible
     if (videoRef.current) {
       const v = videoRef.current
+      // WeChat-specific: attempt play on first touch
+      const onFirstTouch = () => {
+        v.play().catch(() => {})
+        window.removeEventListener('touchstart', onFirstTouch)
+      }
+      window.addEventListener('touchstart', onFirstTouch, { once: true })
       const tryPlay = () => {
         console.log('Attempting to play video...')
         v.play().catch((err) => {
@@ -147,6 +153,7 @@ export default function RedefiningEducation() {
         v.removeEventListener('loadeddata', tryPlay)
         v.removeEventListener('error', onError)
         document.removeEventListener('visibilitychange', onVisibility)
+        window.removeEventListener('touchstart', onFirstTouch)
       }
     }
 
@@ -164,6 +171,13 @@ export default function RedefiningEducation() {
         loop
         muted
         playsInline
+        // WeChat / iOS inline
+        webkit-playsinline="true"
+        x5-video-player-type="h5"
+        x5-video-player-fullscreen="false"
+        x5-playsinline="true"
+        preload="auto"
+        poster="/images/neuroscience.png"
       />
 
       {/* Subtle overlays */}

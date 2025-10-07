@@ -272,7 +272,7 @@ body::-webkit-scrollbar {
 }
 
 .glitch-text::before {
-  content: 'Noetex Society';
+  content: 'Noetex Academy';
   position: absolute;
   top: 0;
   left: 1px;
@@ -282,7 +282,7 @@ body::-webkit-scrollbar {
 }
 
 .glitch-text::after {
-  content: 'Noetex Society';
+  content: 'Noetex Academy';
   position: absolute;
   top: 0;
   left: -1px;

@@ -3,6 +3,7 @@ import Section from '@/components/Section'
 import RedefiningEducation from '@/components/RedefiningEducation'
 import CourseCard from '@/components/CourseCard'
 import MentorCard from '@/components/MentorCard'
+import FieldsWeExplore from '@/components/FieldsWeExplore'
 import { Brain, Zap, Users, Award, Quote, Star, ArrowRight, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 
@@ -28,7 +29,7 @@ export default function Home() {
       type: "Course"
     },
     {
-      title: "The Noetex Society Winter Program: Exploring Life and Intelligence",
+      title: "The Noetex Academy Winter Program: Exploring Life and Intelligence",
       description: "Immersive course helping students master fundamental and research skills in neuroscience and artificial intelligence, with opportunities to exchange ideas with students and scholars from around the world.",
       duration: "10 Days",
       students: 10,
@@ -230,6 +231,9 @@ export default function Home() {
           </div>
         </div>
       </Section>
+
+      {/* Fields We Explore Section */}
+      <FieldsWeExplore />
       
       {/* Past Programs Section */}
       <Section>
@@ -262,7 +266,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
-              Why Choose <span className="gradient-text">Noetex Society</span>
+              Why Choose <span className="gradient-text">Noetex Academy</span>
             </h2>
           </div>
 

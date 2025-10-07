@@ -1,7 +1,26 @@
 'use client'
 
 import Link from 'next/link'
-import { Mail, Twitter, Linkedin, Github, MapPin, Phone } from 'lucide-react'
+import { Linkedin, Instagram, MapPin, Mail } from 'lucide-react'
+
+// Minimal brand-like icons for X (Twitter) and TikTok
+function IconX(props: React.SVGProps<SVGSVGElement>) {
+  // Stylized X (Twitter rebrand) logo
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M18.244 2H21.5l-7.5 8.57L23 22h-7.086l-5.547-6.646L3.756 22H.5l7.964-9.1L1 2h7.086l5.142 6.156L18.244 2z"/>
+    </svg>
+  )
+}
+
+function IconTikTok(props: React.SVGProps<SVGSVGElement>) {
+  // TikTok official glyph (monochrome), source: simple-icons (simplified)
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M12.001 2.04c.57.62 1.187 1.187 1.845 1.698 1.87 1.444 4.006 2.22 6.476 2.332v3.9c-1.49-.15-2.998-.59-4.38-1.276v7.387c0 4.882-3.326 8.379-8.331 8.379C3.304 24.46 0 20.963 0 16.081c0-4.883 3.304-8.38 7.611-8.38.502 0 .993.04 1.48.12v3.98c-.48-.1-.973-.15-1.48-.15-2.354 0-4.07 1.885-4.07 4.53 0 2.643 1.716 4.528 4.07 4.528 2.39 0 3.84-1.66 3.84-4.275V2.04h1.55z"/>
+    </svg>
+  )
+}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -32,10 +51,10 @@ export default function Footer() {
   }
 
   const socialLinks = [
-    { name: 'Twitter', href: '#', icon: Twitter },
+    { name: 'X', href: '#', icon: IconX },
     { name: 'LinkedIn', href: '#', icon: Linkedin },
-    { name: 'GitHub', href: '#', icon: Github },
-    { name: 'Email', href: 'mailto:info@noetex.ai', icon: Mail },
+    { name: 'Instagram', href: '#', icon: Instagram },
+    { name: 'TikTok', href: '#', icon: IconTikTok },
   ]
 
   return (
@@ -56,7 +75,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link href="/" className="block mb-4">
-              <span className="text-xl font-brand-3 gradient-text">Noetex Society</span>
+              <span className="text-xl font-brand-3 gradient-text">Noetex Academy</span>
             </Link>
             <p className="text-gray-400 mb-6">
               Where minds meet the future. Join the next generation of interdisciplinary thinkers.
@@ -129,7 +148,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-indigo-400 flex-shrink-0" />
-                <span className="text-gray-400">info@noetex.ai</span>
+                <a href="mailto:info@noetex.ai" className="text-gray-400 hover:text-white transition-colors duration-200">info@noetex.ai</a>
               </div>
             </div>
           </div>

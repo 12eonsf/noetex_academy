@@ -73,13 +73,13 @@ export default function Apply() {
                 Application Submitted!
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                Thank you for your interest in Noetex Society. We've received your application 
+                Thank you for your interest in Noetex Academy. We've received your application 
                 and will review it carefully. You'll hear from us within 5-7 business days.
               </p>
               <div className="space-y-4">
                 <p className="text-gray-400">
                   In the meantime, explore our programs and faculty to learn more about what makes 
-                  Noetex Society the future of education.
+                  Noetex Academy the future of education.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                   <a
@@ -110,7 +110,7 @@ export default function Apply() {
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-              Apply to <span className="gradient-text">Noetex Society</span>
+              Apply to <span className="gradient-text">Noetex Academy</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Join the next generation of interdisciplinary thinkers. Tell us about yourself 
@@ -288,7 +288,7 @@ export default function Apply() {
                         required
                         rows={4}
                         className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-400 transition-colors duration-200"
-                        placeholder="Why do you want to join Noetex Society? What drives your interest in this field?"
+                        placeholder="Why do you want to join Noetex Academy? What drives your interest in this field?"
                       />
                     </div>
                     <div>

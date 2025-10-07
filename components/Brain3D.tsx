@@ -294,10 +294,10 @@ function BrainScene() {
           }}
         >
           <ambientLight intensity={0.2} />
-          <pointLight position={[3, 3, 2]} intensity={40} color="#1e3a8a" distance={10} decay={2} />
-          <pointLight position={[-3, -2, 2]} intensity={26} color="#1e3a8a" distance={10} decay={2} />
+          <pointLight position={[3, 3, 2]} intensity={40} color="#3b82f6" distance={10} decay={2} />
+          <pointLight position={[-3, -2, 2]} intensity={26} color="#3b82f6" distance={10} decay={2} />
           <group rotation={[0.1, 0.6, 0]}>
-            <BrainShell noiseAmp={0.22} color="#1e3a8a" shellOpacity={0.4} />
+            <BrainShell noiseAmp={0.22} color="#3b82f6" shellOpacity={0.4} />
             <SparklingParticles count={60} />
             <Particles />
           </group>
