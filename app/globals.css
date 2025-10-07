@@ -305,3 +305,81 @@ body::-webkit-scrollbar {
       animation: slideLeft 20s linear infinite;
       animation-fill-mode: none;
     }
+
+    /* Glowing flash animation for X symbol with more colors */
+    @keyframes glow-flash {
+      0% {
+        filter: brightness(1) drop-shadow(0 0 5px rgba(139, 92, 246, 0.5));
+      }
+      12.5% {
+        filter: brightness(1.3) drop-shadow(0 0 10px rgba(59, 130, 246, 0.7));
+      }
+      25% {
+        filter: brightness(1.6) drop-shadow(0 0 15px rgba(6, 182, 212, 0.8));
+      }
+      37.5% {
+        filter: brightness(1.8) drop-shadow(0 0 20px rgba(34, 197, 94, 0.9));
+      }
+      50% {
+        filter: brightness(2) drop-shadow(0 0 25px rgba(251, 191, 36, 1));
+      }
+      62.5% {
+        filter: brightness(1.8) drop-shadow(0 0 20px rgba(239, 68, 68, 0.9));
+      }
+      75% {
+        filter: brightness(1.6) drop-shadow(0 0 15px rgba(168, 85, 247, 0.8));
+      }
+      87.5% {
+        filter: brightness(1.3) drop-shadow(0 0 10px rgba(236, 72, 153, 0.7));
+      }
+      100% {
+        filter: brightness(1) drop-shadow(0 0 5px rgba(139, 92, 246, 0.5));
+      }
+    }
+
+    .animate-glow-flash {
+      animation: glow-flash 2s ease-in-out infinite;
+    }
+
+    /* Neural Sync Progress Bar Animation */
+    @keyframes neural-sync {
+      0% {
+        width: 0%;
+      }
+      50% {
+        width: 100%;
+      }
+      100% {
+        width: 0%;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* 3D Neural Network Effects */
+    .neural-node-3d {
+      filter: drop-shadow(0 0 3px currentColor);
+    }
+
+    .neural-connection-3d {
+      filter: drop-shadow(0 0 1px currentColor);
+    }
+
+    /* Enhanced 3D depth effect */
+    .neural-node-3d:nth-child(odd) {
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3)) drop-shadow(0 0 3px currentColor);
+    }
+
+    .neural-node-3d:nth-child(even) {
+      filter: drop-shadow(-2px -2px 4px rgba(0,0,0,0.3)) drop-shadow(0 0 3px currentColor);
+    }
+
+
+

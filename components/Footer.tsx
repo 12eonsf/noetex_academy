@@ -63,10 +63,10 @@ export default function Footer() {
       <div id="noetex-strip" className="relative overflow-hidden py-16">
         <div className="flex animate-slide-left">
           <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent select-none whitespace-nowrap flex-shrink-0" style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.4)' }}>
-            NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY
+            NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY
           </h1>
           <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-brand-3 text-transparent select-none whitespace-nowrap flex-shrink-0 ml-8" style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.4)' }}>
-            NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY NOETEX SOCIETY
+            NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY NOETEX ACADEMY
           </h1>
         </div>
       </div>
