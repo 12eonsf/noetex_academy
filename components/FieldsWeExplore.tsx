@@ -140,8 +140,12 @@ export default function FieldsWeExplore() {
               .slice(0, remainingSlots);
             mixedRowTerms.push(...extendedTermsForRow);
             
-            // Shuffle the mixed terms randomly
-            const shuffledTerms = [...mixedRowTerms].sort(() => Math.random() - 0.5);
+            // Shuffle the mixed terms using a deterministic seed based on rowIndex
+            const shuffledTerms = [...mixedRowTerms].sort((a, b) => {
+              // Use rowIndex as seed for deterministic randomization
+              const seed = rowIndex * 7 + a.charCodeAt(0) + b.charCodeAt(0);
+              return (seed % 3) - 1; // Returns -1, 0, or 1
+            });
             
             return (
               <div
