@@ -3,71 +3,80 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import Section from "./Section";
 
-const fields = [
-  { 
-    name: "Neuroscience", 
-    image: "/images/neuroscience.png",
-    description: "Understanding the brain and nervous system",
-    color: "from-blue-400 to-cyan-400",
-    terms: ["Neurons", "Synapse", "EEG", "fMRI", "Dopamine", "Plasticity"]
-  },
-  { 
-    name: "Artificial Intelligence", 
-    image: "/images/ai.png",
-    description: "Machine learning and cognitive computing",
-    color: "from-purple-400 to-pink-400",
-    terms: ["Neural Net", "Deep Learning", "Algorithm", "Training", "Inference"]
-  },
-  { 
-    name: "Psychiatry", 
-    image: "/images/psychiatry.png",
-    description: "Mental health and behavioral disorders",
-    color: "from-green-400 to-emerald-400",
-    terms: ["Therapy", "Diagnosis", "Treatment", "Mental Health", "Behavior"]
-  },
-  { 
-    name: "Cognitive Science", 
-    image: "/images/cognitive.png",
-    description: "Mind, perception, and information processing",
-    color: "from-orange-400 to-red-400",
-    terms: ["Cognition", "Memory", "Attention", "Learning", "Reasoning", "Perception", "Consciousness", "Intelligence", "Problem Solving", "Decision Making"]
-  },
-  { 
-    name: "Life Science", 
-    image: "/images/life.png",
-    description: "Biology, genetics, and living systems",
-    color: "from-teal-400 to-green-400",
-    terms: ["Genome", "Protein", "Cell", "Evolution", "DNA", "Biology", "Genetics", "Molecular", "Organism", "Ecosystem"]
-  },
-  { 
-    name: "Philosophy", 
-    image: "/images/philosophy.png",
-    description: "Fundamental questions about existence and knowledge",
-    color: "from-indigo-400 to-purple-400",
-    terms: ["Ethics", "Logic", "Metaphysics", "Epistemology", "Consciousness", "Truth", "Reality", "Existence", "Knowledge", "Wisdom"]
-  },
-  { 
-    name: "Social Sciences", 
-    image: "/images/social.png",
-    description: "Human behavior and social structures",
-    color: "from-pink-400 to-rose-400",
-    terms: ["Society", "Culture", "Behavior", "Social", "Human", "Community", "Interaction", "Norms", "Values", "Institution"]
-  },
-  { 
-    name: "Linguistics", 
-    image: "/images/linguistics.png",
-    description: "Language structure and communication",
-    color: "from-yellow-400 to-orange-400",
-    terms: ["Language", "Syntax", "Semantics", "Grammar", "Communication", "Linguistics", "Phonetics", "Morphology", "Pragmatics", "Discourse"]
-  },
-  { 
-    name: "Psychology", 
-    image: "/images/psychology.png",
-    description: "Human mind, behavior, and mental processes",
-    color: "from-cyan-400 to-blue-400",
-    terms: ["Psychology", "Behavior", "Mind", "Personality", "Development", "Emotion", "Cognition", "Mental", "Therapy", "Research"]
-  },
-];
+  const fields = [
+    { 
+      name: "Neuroscience", 
+      image: "/images/neuroscience.png",
+      description: "Understanding the brain and nervous system",
+      color: "from-blue-400 to-cyan-400",
+      hoverColor: "from-blue-500 to-cyan-500",
+      terms: ["Neurons", "Synapse", "EEG", "fMRI", "Dopamine", "Plasticity"]
+    },
+    { 
+      name: "Artificial Intelligence", 
+      image: "/images/ai.png",
+      description: "Machine learning and cognitive computing",
+      color: "from-purple-400 to-pink-400",
+      hoverColor: "from-purple-500 to-pink-500",
+      terms: ["Neural Net", "Deep Learning", "Algorithm", "Training", "Inference"]
+    },
+    { 
+      name: "Psychiatry", 
+      image: "/images/psychiatry.png",
+      description: "Mental health and behavioral disorders",
+      color: "from-green-400 to-emerald-400",
+      hoverColor: "from-green-500 to-emerald-500",
+      terms: ["Therapy", "Diagnosis", "Treatment", "Mental Health", "Behavior"]
+    },
+    { 
+      name: "Cognitive Science", 
+      image: "/images/cognitive.png",
+      description: "Mind, perception, and information processing",
+      color: "from-orange-400 to-red-400",
+      hoverColor: "from-orange-500 to-red-500",
+      terms: ["Cognition", "Memory", "Attention", "Learning", "Reasoning", "Perception", "Consciousness", "Intelligence", "Problem Solving", "Decision Making"]
+    },
+    { 
+      name: "Life Science", 
+      image: "/images/life.png",
+      description: "Biology, genetics, and living systems",
+      color: "from-teal-400 to-green-400",
+      hoverColor: "from-teal-500 to-green-500",
+      terms: ["Genome", "Protein", "Cell", "Evolution", "DNA", "Biology", "Genetics", "Molecular", "Organism", "Ecosystem"]
+    },
+    { 
+      name: "Philosophy", 
+      image: "/images/philosophy.png",
+      description: "Fundamental questions about existence and knowledge",
+      color: "from-indigo-400 to-purple-400",
+      hoverColor: "from-indigo-500 to-purple-500",
+      terms: ["Ethics", "Logic", "Metaphysics", "Epistemology", "Consciousness", "Truth", "Reality", "Existence", "Knowledge", "Wisdom"]
+    },
+    { 
+      name: "Social Sciences", 
+      image: "/images/social.png",
+      description: "Human behavior and social structures",
+      color: "from-pink-400 to-rose-400",
+      hoverColor: "from-pink-500 to-rose-500",
+      terms: ["Society", "Culture", "Behavior", "Social", "Human", "Community", "Interaction", "Norms", "Values", "Institution"]
+    },
+    { 
+      name: "Linguistics", 
+      image: "/images/linguistics.png",
+      description: "Language structure and communication",
+      color: "from-yellow-400 to-orange-400",
+      hoverColor: "from-yellow-500 to-orange-500",
+      terms: ["Language", "Syntax", "Semantics", "Grammar", "Communication", "Linguistics", "Phonetics", "Morphology", "Pragmatics", "Discourse"]
+    },
+    { 
+      name: "Psychology", 
+      image: "/images/psychology.png",
+      description: "Human mind, behavior, and mental processes",
+      color: "from-cyan-400 to-blue-400",
+      hoverColor: "from-cyan-500 to-blue-500",
+      terms: ["Psychology", "Behavior", "Mind", "Personality", "Development", "Emotion", "Cognition", "Mental", "Therapy", "Research"]
+    },
+  ];
 
 
 export default function FieldsWeExplore() {
@@ -178,11 +187,15 @@ export default function FieldsWeExplore() {
                         key={`row-${rowIndex}-item-${j}`}
                         className={`mx-4 md:mx-8 text-gray-400 font-mono ${sizeClass} transition-all duration-300 ${
                           isHovered 
-                            ? `text-transparent bg-clip-text bg-gradient-to-r ${fields[hoveredField].color} font-bold` 
+                            ? `text-transparent bg-clip-text bg-gradient-to-r ${fields[hoveredField].hoverColor} font-bold` 
                             : 'hover:text-gray-300'
                         }`}
                         animate={isHovered ? { scale: 1.1, opacity: 1 } : { scale: 1, opacity: 0.7 }}
                         transition={{ duration: 0.3 }}
+                        style={{
+                          WebkitBackgroundClip: isHovered ? 'text' : 'initial',
+                          WebkitTextFillColor: isHovered ? 'transparent' : 'initial'
+                        }}
                       >
                         {term}
                       </motion.span>
@@ -255,13 +268,15 @@ export default function FieldsWeExplore() {
                   type: "spring",
                   stiffness: 100
                 }}
-                onHoverStart={() => setHoveredField(index)}
-                onHoverEnd={() => setHoveredField(null)}
+                onMouseEnter={() => setHoveredField(index)}
+                onMouseLeave={() => setHoveredField(null)}
+                onTouchStart={() => setHoveredField(index)}
+                onTouchEnd={() => setHoveredField(null)}
                 className="cursor-pointer group relative overflow-hidden rounded-2xl border transition-all duration-300 bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
               >
                 {/* Background gradient effect */}
                 <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${field.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                  className={`absolute inset-0 bg-gradient-to-br ${field.hoverColor} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 0.1 }}
                 />
@@ -270,7 +285,7 @@ export default function FieldsWeExplore() {
                 <div className="relative z-10 p-4 md:p-6">
                   <div className="text-center">
                     <h3 
-                      className="text-sm md:text-base font-orbitron font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 break-words hyphens-auto"
+                      className="text-xs md:text-sm font-poiret-one font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 break-words hyphens-auto"
                       style={{ 
                         wordBreak: 'break-word',
                         hyphens: 'auto',
@@ -285,9 +300,9 @@ export default function FieldsWeExplore() {
 
                 {/* Animated border effect */}
                 <motion.div
-                  className={`absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r ${field.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  className={`absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r ${field.hoverColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                   style={{
-                    background: `linear-gradient(45deg, transparent, transparent), linear-gradient(45deg, ${field.color.includes('blue') ? '#3b82f6' : field.color.includes('purple') ? '#8b5cf6' : '#10b981'}, transparent)`,
+                    background: `linear-gradient(45deg, transparent, transparent), linear-gradient(45deg, ${field.hoverColor.includes('blue') ? '#3b82f6' : field.hoverColor.includes('purple') ? '#8b5cf6' : field.hoverColor.includes('green') ? '#10b981' : field.hoverColor.includes('orange') ? '#f59e0b' : field.hoverColor.includes('teal') ? '#14b8a6' : field.hoverColor.includes('indigo') ? '#6366f1' : field.hoverColor.includes('pink') ? '#ec4899' : field.hoverColor.includes('yellow') ? '#eab308' : '#06b6d4'}, transparent)`,
                     backgroundClip: 'padding-box, border-box',
                     backgroundOrigin: 'padding-box, border-box'
                   }}
