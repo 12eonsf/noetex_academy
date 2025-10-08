@@ -99,6 +99,13 @@ body::-webkit-scrollbar {
     font-weight: 400;
     letter-spacing: 0.05em;
   }
+
+  /* Orbitron font class */
+  .font-orbitron {
+    font-family: var(--font-orbitron), 'Orbitron', 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
   
   .font-brand-4 {
     font-family: 'Share Tech Mono', 'JetBrains Mono', monospace;

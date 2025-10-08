@@ -30,49 +30,48 @@ const fields = [
     image: "/images/cognitive.png",
     description: "Mind, perception, and information processing",
     color: "from-orange-400 to-red-400",
-    terms: ["Cognition", "Memory", "Attention", "Learning", "Reasoning"]
+    terms: ["Cognition", "Memory", "Attention", "Learning", "Reasoning", "Perception", "Consciousness", "Intelligence", "Problem Solving", "Decision Making"]
   },
   { 
     name: "Life Science", 
     image: "/images/life.png",
     description: "Biology, genetics, and living systems",
     color: "from-teal-400 to-green-400",
-    terms: ["Genome", "Protein", "Cell", "Evolution", "DNA"]
+    terms: ["Genome", "Protein", "Cell", "Evolution", "DNA", "Biology", "Genetics", "Molecular", "Organism", "Ecosystem"]
   },
   { 
     name: "Philosophy", 
     image: "/images/philosophy.png",
     description: "Fundamental questions about existence and knowledge",
     color: "from-indigo-400 to-purple-400",
-    terms: ["Ethics", "Logic", "Metaphysics", "Epistemology", "Consciousness"]
+    terms: ["Ethics", "Logic", "Metaphysics", "Epistemology", "Consciousness", "Truth", "Reality", "Existence", "Knowledge", "Wisdom"]
   },
   { 
     name: "Social Sciences", 
     image: "/images/social.png",
     description: "Human behavior and social structures",
     color: "from-pink-400 to-rose-400",
-    terms: ["Society", "Culture", "Behavior", "Social", "Human"]
+    terms: ["Society", "Culture", "Behavior", "Social", "Human", "Community", "Interaction", "Norms", "Values", "Institution"]
   },
   { 
     name: "Linguistics", 
     image: "/images/linguistics.png",
     description: "Language structure and communication",
     color: "from-yellow-400 to-orange-400",
-    terms: ["Language", "Syntax", "Semantics", "Grammar", "Communication"]
+    terms: ["Language", "Syntax", "Semantics", "Grammar", "Communication", "Linguistics", "Phonetics", "Morphology", "Pragmatics", "Discourse"]
   },
   { 
     name: "Psychology", 
     image: "/images/psychology.png",
     description: "Human mind, behavior, and mental processes",
     color: "from-cyan-400 to-blue-400",
-    terms: ["Psychology", "Behavior", "Mind", "Personality", "Development"]
+    terms: ["Psychology", "Behavior", "Mind", "Personality", "Development", "Emotion", "Cognition", "Mental", "Therapy", "Research"]
   },
 ];
 
 
 export default function FieldsWeExplore() {
   const [hoveredField, setHoveredField] = useState<number | null>(null);
-  const [selectedField, setSelectedField] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
   const controls = useAnimation();
@@ -83,9 +82,33 @@ export default function FieldsWeExplore() {
     }
   }, [isInView, controls]);
 
-  // Get all unique terms from all fields
+  // Get all unique terms from all fields with better distribution
   const allTerms = fields.flatMap(field => field.terms);
   const uniqueTerms = [...new Set(allTerms)];
+  
+  // Create a more diverse term pool by adding field-specific terms
+  const extendedTerms = [
+    // Neuroscience terms
+    'Neurons', 'Synapse', 'Hippocampus', 'Cortex', 'EEG', 'fMRI', 'Dopamine', 'Axon', 'Dendrite', 'Plasticity', 'Amygdala', 'Glia',
+    // AI terms
+    'Transformer', 'Reinforcement', 'Neural Net', 'Backprop', 'Embedding', 'Attention', 'Generative', 'Inference', 'Agent', 'Planning',
+    // Psychiatry terms
+    'Mood', 'Cognition', 'Anxiety', 'Depression', 'Therapy', 'Diagnosis', 'Clinical', 'Resilience', 'Trauma', 'Mind',
+    // Cognitive Science terms
+    'Perception', 'Memory', 'Language', 'Reasoning', 'Concepts', 'Decision', 'Learning', 'Representation', 'Schema', 'Consciousness',
+    // Life Science terms
+    'Genome', 'Protein', 'Cell', 'Evolution', 'Metabolism', 'Homeostasis', 'Biodiversity', 'Embryo', 'Microbiome', 'Adaptation',
+    // Philosophy terms
+    'Being', 'Ethics', 'Logic', 'Knowledge', 'Ontology', 'Causality', 'Metaphysics', 'Phenomenology', 'Truth', 'Reality',
+    // Social Sciences terms
+    'Network', 'Culture', 'Institution', 'Inequality', 'Norms', 'Mobility', 'Collective', 'Identity', 'Demography', 'Community',
+    // Linguistics terms
+    'Syntax', 'Semantics', 'Phonology', 'Morphology', 'Pragmatics', 'Prosody', 'Grammar', 'Discourse', 'Lexicon', 'Phonetics',
+    // Psychology terms
+    'Motivation', 'Emotion', 'Personality', 'Stress', 'Executive', 'Intelligence', 'Development', 'Behavior', 'Mental', 'Research'
+  ];
+  
+  const finalTerms = [...new Set([...allTerms, ...extendedTerms])];
 
   return (
     <Section>
@@ -98,6 +121,28 @@ export default function FieldsWeExplore() {
             const rowTop = `${rowIndex * 12.5}%`;
             const height = '12.5%';
             
+            // Create a mixed row with terms from all fields, randomly shuffled
+            const mixedRowTerms = [];
+            
+            // Add terms from each field to ensure representation
+            fields.forEach(field => {
+              const fieldTerms = field.terms.filter(term => finalTerms.includes(term));
+              const termsPerField = Math.ceil(fieldTerms.length / 8); // Distribute field terms across rows
+              const startIdx = rowIndex * termsPerField;
+              const endIdx = Math.min(startIdx + termsPerField, fieldTerms.length);
+              mixedRowTerms.push(...fieldTerms.slice(startIdx, endIdx));
+            });
+            
+            // Add some extended terms to fill the row
+            const remainingSlots = Math.max(0, 15 - mixedRowTerms.length);
+            const extendedTermsForRow = extendedTerms
+              .filter(term => !mixedRowTerms.includes(term))
+              .slice(0, remainingSlots);
+            mixedRowTerms.push(...extendedTermsForRow);
+            
+            // Shuffle the mixed terms randomly
+            const shuffledTerms = [...mixedRowTerms].sort(() => Math.random() - 0.5);
+            
             return (
               <div
                 key={`row-${rowIndex}`}
@@ -109,8 +154,7 @@ export default function FieldsWeExplore() {
                   animate={{ x: directionLeft ? [0, -800] : [-800, 0] }}
                   transition={{ duration, repeat: Infinity, ease: 'linear' }}
                 >
-                  {Array.from({ length: 20 }).map((__, j) => {
-                    const term = uniqueTerms[j % uniqueTerms.length];
+                  {shuffledTerms.map((term, j) => {
                     const sizeClass = j % 6 === 0
                       ? 'text-[8px] sm:text-xs'
                       : j % 6 === 1
@@ -207,58 +251,32 @@ export default function FieldsWeExplore() {
                   type: "spring",
                   stiffness: 100
                 }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -5,
-                  transition: { duration: 0.2 }
-                }}
-                whileTap={{ scale: 0.95 }}
                 onHoverStart={() => setHoveredField(index)}
                 onHoverEnd={() => setHoveredField(null)}
-                onClick={() => setSelectedField(selectedField === index ? null : index)}
-                className={`
-                  cursor-pointer group relative overflow-hidden rounded-2xl border transition-all duration-500
-                  ${selectedField === index 
-                    ? 'bg-white/15 border-white/30 shadow-2xl shadow-purple-500/20' 
-                    : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
-                  }
-                  ${hoveredField === index ? 'shadow-lg shadow-purple-500/10' : ''}
-                `}
+                className="cursor-pointer group relative overflow-hidden rounded-2xl border transition-all duration-300 bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
               >
                 {/* Background gradient effect */}
                 <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${field.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${field.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 0.1 }}
                 />
                 
                 {/* Content */}
-                <div className="relative z-10 p-6 md:p-8">
-                  <motion.div
-                    className="text-center"
-                    animate={hoveredField === index ? { y: -2 } : { y: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <motion.h3 
-                      className={`text-sm md:text-base font-mono-display font-semibold mb-2 transition-colors duration-300 ${
-                        selectedField === index 
-                          ? 'text-white' 
-                          : 'text-gray-300 group-hover:text-white'
-                      }`}
-                      animate={hoveredField === index ? { scale: 1.05 } : { scale: 1 }}
+                <div className="relative z-10 p-4 md:p-6">
+                  <div className="text-center">
+                    <h3 
+                      className="text-sm md:text-base font-orbitron font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 break-words hyphens-auto"
+                      style={{ 
+                        wordBreak: 'break-word',
+                        hyphens: 'auto',
+                        WebkitHyphens: 'auto',
+                        msHyphens: 'auto'
+                      }}
                     >
                       {field.name}
-                    </motion.h3>
-                    
-                    <motion.p 
-                      className="text-xs md:text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={selectedField === index ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {field.description}
-                    </motion.p>
-                  </motion.div>
+                    </h3>
+                  </div>
                 </div>
 
                 {/* Animated border effect */}
@@ -274,49 +292,6 @@ export default function FieldsWeExplore() {
             ))}
           </motion.div>
 
-          {/* Interactive Stats */}
-          <motion.div 
-            className="mt-16 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={controls}
-            variants={{
-              visible: { opacity: 1, y: 0 }
-            }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <motion.div 
-                className="text-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="text-3xl md:text-4xl font-mono-display text-white mb-2">
-                  {fields.length}
-                </div>
-                <div className="text-sm text-gray-400">Research Fields</div>
-              </motion.div>
-              <motion.div 
-                className="text-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="text-3xl md:text-4xl font-mono-display text-white mb-2">
-                  {uniqueTerms.length}+
-                </div>
-                <div className="text-sm text-gray-400">Key Concepts</div>
-              </motion.div>
-              <motion.div 
-                className="text-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="text-3xl md:text-4xl font-mono-display text-white mb-2">
-                  ∞
-                </div>
-                <div className="text-sm text-gray-400">Possibilities</div>
-              </motion.div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </Section>
