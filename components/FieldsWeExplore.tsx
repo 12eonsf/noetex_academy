@@ -282,20 +282,18 @@ export default function FieldsWeExplore() {
                 />
                 
                 {/* Content */}
-                <div className="relative z-10 p-4 md:p-6">
-                  <div className="text-center">
-                    <h3 
-                      className="text-xs md:text-sm font-orbitron font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 break-words hyphens-auto"
-                      style={{ 
-                        wordBreak: 'break-word',
-                        hyphens: 'auto',
-                        WebkitHyphens: 'auto',
-                        msHyphens: 'auto'
-                      }}
-                    >
-                      {field.name}
-                    </h3>
-                  </div>
+                <div className="relative z-10 flex items-center justify-center h-full p-4 md:p-6">
+                  <h3 
+                    className="text-xs md:text-sm font-orbitron font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 break-words hyphens-auto text-center"
+                    style={{ 
+                      wordBreak: 'break-word',
+                      hyphens: 'auto',
+                      WebkitHyphens: 'auto',
+                      msHyphens: 'auto'
+                    }}
+                  >
+                    {field.name}
+                  </h3>
                 </div>
 
                 {/* Animated border effect */}
