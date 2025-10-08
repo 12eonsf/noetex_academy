@@ -84,7 +84,7 @@ export default function FieldsWeExplore() {
 
   // Get all unique terms from all fields with better distribution
   const allTerms = fields.flatMap(field => field.terms);
-  const uniqueTerms = [...new Set(allTerms)];
+  const uniqueTerms = Array.from(new Set(allTerms));
   
   // Create a more diverse term pool by adding field-specific terms
   const extendedTerms = [
@@ -108,7 +108,7 @@ export default function FieldsWeExplore() {
     'Motivation', 'Emotion', 'Personality', 'Stress', 'Executive', 'Intelligence', 'Development', 'Behavior', 'Mental', 'Research'
   ];
   
-  const finalTerms = [...new Set([...allTerms, ...extendedTerms])];
+  const finalTerms = Array.from(new Set([...allTerms, ...extendedTerms]));
 
   return (
     <Section>
@@ -122,7 +122,7 @@ export default function FieldsWeExplore() {
             const height = '12.5%';
             
             // Create a mixed row with terms from all fields, randomly shuffled
-            const mixedRowTerms = [];
+            const mixedRowTerms: string[] = [];
             
             // Add terms from each field to ensure representation
             fields.forEach(field => {
