@@ -285,7 +285,7 @@ export default function FieldsWeExplore() {
                 <div className="relative z-10 p-4 md:p-6">
                   <div className="text-center">
                     <h3 
-                      className="text-xs md:text-sm font-poiret-one font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 break-words hyphens-auto"
+                      className="text-xs md:text-sm font-orbitron font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 break-words hyphens-auto"
                       style={{ 
                         wordBreak: 'break-word',
                         hyphens: 'auto',
