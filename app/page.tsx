@@ -9,32 +9,55 @@ import FieldsWeExplore from '@/components/FieldsWeExplore'
 import { Brain, Zap, Users, Award, Quote, Star, ArrowRight, ArrowUpRight, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
-// DecryptingText component for character-by-character decryption effect
+// DecryptingText component for fast character-by-character decryption effect with scroll trigger
 function DecryptingText({ text, highlightedWords = [] }: { text: string, highlightedWords?: Array<{ word: string, color: string }> }) {
   const [displayedText, setDisplayedText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const textRef = useRef<HTMLDivElement>(null)
 
   const glitchChars = '!@#$%^&*()_+-=[]{}|;:,.<>?~`0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
+  // Intersection Observer for scroll trigger
   useEffect(() => {
-    if (currentIndex < text.length) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    if (textRef.current) {
+      observer.observe(textRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (isVisible && currentIndex < text.length) {
       const timer = setTimeout(() => {
-        // Show glitch characters first
-        const glitchText = text.slice(0, currentIndex) + glitchChars[Math.floor(Math.random() * glitchChars.length)]
-        setDisplayedText(glitchText)
+        // Show glitch character first
+        const glitchChar = glitchChars[Math.floor(Math.random() * glitchChars.length)]
+        setDisplayedText(prev => prev + glitchChar)
         
-        // Then show the correct character after a short delay
+        // Then show the correct character after a very short delay
         setTimeout(() => {
-          setDisplayedText(text.slice(0, currentIndex + 1))
+          setDisplayedText(prev => {
+            const withoutGlitch = prev.slice(0, -1)
+            return withoutGlitch + text[currentIndex]
+          })
           setCurrentIndex(currentIndex + 1)
-        }, 20)
-      }, 30)
+        }, 10) // Very fast decryption
+      }, 5) // Very fast character interval
 
       return () => clearTimeout(timer)
     }
-  }, [currentIndex, text])
+  }, [isVisible, currentIndex, text])
 
   const renderText = () => {
     let result = displayedText
@@ -48,7 +71,7 @@ function DecryptingText({ text, highlightedWords = [] }: { text: string, highlig
       result = result.replace(regex, `<span class="bg-gradient-to-r ${color} bg-clip-text text-transparent">$1</span>`)
     })
 
-    return <span dangerouslySetInnerHTML={{ __html: result }} />
+    return <span ref={textRef} dangerouslySetInnerHTML={{ __html: result }} />
   }
 
   return renderText()
@@ -478,7 +501,7 @@ export default function Home() {
             </div>
 
             {/* Card with image and text */}
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-black via-gray-900 to-black border border-white/10 relative z-10 overflow-hidden" style={{ backgroundColor: '#000000' }}>
+            <div className="container-custom p-8 rounded-2xl bg-gradient-to-br from-black via-gray-900 to-black border border-white/10 relative z-10 overflow-hidden" style={{ backgroundColor: '#000000' }}>
               {/* 3D Neural Network Matrix Background */}
               <div className="absolute inset-0 pointer-events-none">
                 <svg className="w-full h-full opacity-20" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
@@ -732,12 +755,12 @@ export default function Home() {
                     }}
                   />
                   {/* Frosted glass overlay at bottom */}
-                  <div className="absolute bottom-4 left-4 right-4 p-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl">
+                  <div className="absolute bottom-4 left-4 right-4 p-6 bg-black/60 backdrop-blur-lg border border-white/20 rounded-2xl">
                     <div className="flex items-center space-x-3 mb-3">
                       <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse" />
                       <span className="text-sm font-mono-display text-white/80">Live Network</span>
                     </div>
-                    <h3 className="text-lg md:text-2xl font-mono-display text-white mb-2">
+                    <h3 className="text-sm md:text-2xl font-mono-display text-white mb-2">
                       <span className="gradient-text">1M+</span> Active Minds
                     </h3>
                   </div>

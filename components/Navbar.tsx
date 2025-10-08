@@ -54,7 +54,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/apply"
-              className="px-4 py-2 rounded-lg text-white hover:bg-white/5 transition-all duration-200 font-futura-1 flex items-center space-x-2 relative"
+              className="px-4 py-2 rounded-lg text-white hover:bg-white/5 transition-all duration-200 font-futura-1 flex items-center space-x-2 relative group overflow-hidden"
               style={{
                 background: 'transparent',
                 border: '1px solid transparent',
@@ -64,8 +64,15 @@ export default function Navbar() {
                 borderRadius: '8px'
               }}
             >
-              <span>Apply Now</span>
-              <ArrowUpRight className="h-4 w-4" />
+              {/* Animated glowing border */}
+              <div className="absolute inset-0 rounded-lg opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-300 animate-glow-border"></div>
+                <div className="absolute inset-[1px] rounded-lg bg-black/95 backdrop-blur-sm"></div>
+              </div>
+              
+              {/* Content */}
+              <span className="relative z-10">Apply Now</span>
+              <ArrowUpRight className="h-4 w-4 relative z-10" />
             </Link>
           </div>
 
@@ -96,7 +103,7 @@ export default function Navbar() {
               <Link
                 href="/apply"
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2 rounded-lg text-white text-center hover:bg-white/5 transition-all duration-200 font-futura-1 flex items-center justify-center space-x-2 relative"
+                className="px-4 py-2 rounded-lg text-white text-center hover:bg-white/5 transition-all duration-200 font-futura-1 flex items-center justify-center space-x-2 relative group overflow-hidden"
                 style={{
                   background: 'transparent',
                   border: '1px solid transparent',
@@ -106,8 +113,15 @@ export default function Navbar() {
                   borderRadius: '8px'
                 }}
               >
-                <span>Apply Now</span>
-                <ArrowUpRight className="h-4 w-4" />
+                {/* Animated glowing border */}
+                <div className="absolute inset-0 rounded-lg opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-300 animate-glow-border"></div>
+                  <div className="absolute inset-[1px] rounded-lg bg-black/95 backdrop-blur-sm"></div>
+                </div>
+                
+                {/* Content */}
+                <span className="relative z-10">Apply Now</span>
+                <ArrowUpRight className="h-4 w-4 relative z-10" />
               </Link>
             </div>
           </div>
