@@ -391,12 +391,12 @@ export default function Home() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-white mb-1">Ed Boyden</h3>
-                    <p className="text-sm text-gray-400 mb-2">麻省理工学院(MIT) Y. Eva Tan神经技术教授</p>
+                    <p className="text-sm text-gray-400 mb-2">Y. Eva Tan Professor in Neurotechnology at MIT</p>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-3">大脑如何产生思想？</h4>
+                <h4 className="text-lg font-semibold text-white mb-3">How Does the Brain Generate Thought?</h4>
                 <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  新技术如何帮助我们更好地理解大脑？
+                  How can new technologies help us better understand the brain?
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30">Neuroscience</span>
@@ -415,12 +415,12 @@ export default function Home() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-white mb-1">David Poeppel</h3>
-                    <p className="text-sm text-gray-400 mb-2">纽约大学心理学和神经科学教授</p>
+                    <p className="text-sm text-gray-400 mb-2">Professor of Psychology and Neural Science at NYU</p>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-3">大脑如何理解语言？</h4>
+                <h4 className="text-lg font-semibold text-white mb-3">How Does the Brain Understand Language?</h4>
                 <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  为言语处理构建模型。
+                  Building models for speech processing.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full border border-green-500/30">Linguistics</span>
@@ -439,12 +439,12 @@ export default function Home() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-white mb-1">Masud Husain</h3>
-                    <p className="text-sm text-gray-400 mb-2">牛津大学神经病学和认知神经科学教授</p>
+                    <p className="text-sm text-gray-400 mb-2">Professor of Neurology and Cognitive Neuroscience at Oxford</p>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-3">我们如何理解注意力？</h4>
+                <h4 className="text-lg font-semibold text-white mb-3">How Do We Understand Attention?</h4>
                 <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  注意力如何定义我们的认知功能？
+                  How does attention define our cognitive functions?
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full border border-orange-500/30">Attention</span>
@@ -466,9 +466,9 @@ export default function Home() {
                     <p className="text-sm text-gray-400 mb-2">Professor of Cognitive and Computational Neuroscience at the University of Sussex</p>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-3">意识是受控的幻觉？</h4>
+                <h4 className="text-lg font-semibold text-white mb-3">Is Consciousness a Controlled Hallucination?</h4>
                 <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  我们有可能彻底理解意识吗？
+                  Is it possible for us to fully understand consciousness?
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full border border-indigo-500/30">Consciousness</span>
