@@ -140,6 +140,11 @@ body::-webkit-scrollbar {
   line-height: 1.2;
 }
 
+/* Space Grotesk font class */
+.font-space-grotesk {
+  font-family: var(--font-space-grotesk), 'Inter', sans-serif;
+}
+
 /* Alternative futuristic font options */
 .font-futura-1 {
   font-family: var(--font-space-grotesk), 'Inter', sans-serif;
