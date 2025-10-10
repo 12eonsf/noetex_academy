@@ -384,20 +384,27 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {/* Ed Boyden Interview */}
             <div className="animate-fade-in-delay" style={{ animationDelay: '0s' }}>
-              <div className="glass-card glass-card-hover p-6 h-full">
-                <div className="flex items-start space-x-4 mb-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+              <div className="glass-card glass-card-hover p-6 h-full flex flex-col">
+                {/* Article Title */}
+                <h4 className="text-xl font-semibold text-white mb-4 leading-tight">How Does the Brain Generate Thought?</h4>
+                
+                {/* Summary */}
+                <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
+                  How can new technologies help us better understand the brain?
+                </p>
+                
+                {/* Author Info */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg">
                     EB
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-1">Ed Boyden</h3>
-                    <p className="text-sm text-gray-400 mb-2">Y. Eva Tan Professor in Neurotechnology at MIT</p>
+                    <h3 className="text-lg font-semibold text-white mb-1">Ed Boyden</h3>
+                    <p className="text-xs text-gray-400">Y. Eva Tan Professor in Neurotechnology at MIT</p>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-3">How Does the Brain Generate Thought?</h4>
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  How can new technologies help us better understand the brain?
-                </p>
+                
+                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30">Neuroscience</span>
                   <span className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30">Technology</span>
@@ -408,20 +415,27 @@ export default function Home() {
 
             {/* David Poeppel Interview */}
             <div className="animate-fade-in-delay" style={{ animationDelay: '0.1s' }}>
-              <div className="glass-card glass-card-hover p-6 h-full">
-                <div className="flex items-start space-x-4 mb-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+              <div className="glass-card glass-card-hover p-6 h-full flex flex-col">
+                {/* Article Title */}
+                <h4 className="text-xl font-semibold text-white mb-4 leading-tight">How Does the Brain Understand Language?</h4>
+                
+                {/* Summary */}
+                <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
+                  Building models for speech processing.
+                </p>
+                
+                {/* Author Info */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg">
                     DP
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-1">David Poeppel</h3>
-                    <p className="text-sm text-gray-400 mb-2">Professor of Psychology and Neural Science at NYU</p>
+                    <h3 className="text-lg font-semibold text-white mb-1">David Poeppel</h3>
+                    <p className="text-xs text-gray-400">Professor of Psychology and Neural Science at NYU</p>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-3">How Does the Brain Understand Language?</h4>
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  Building models for speech processing.
-                </p>
+                
+                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full border border-green-500/30">Linguistics</span>
                   <span className="px-3 py-1 bg-teal-500/20 text-teal-300 text-xs rounded-full border border-teal-500/30">Language</span>
@@ -432,20 +446,27 @@ export default function Home() {
 
             {/* Masud Husain Interview */}
             <div className="animate-fade-in-delay" style={{ animationDelay: '0.2s' }}>
-              <div className="glass-card glass-card-hover p-6 h-full">
-                <div className="flex items-start space-x-4 mb-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+              <div className="glass-card glass-card-hover p-6 h-full flex flex-col">
+                {/* Article Title */}
+                <h4 className="text-xl font-semibold text-white mb-4 leading-tight">How Do We Understand Attention?</h4>
+                
+                {/* Summary */}
+                <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
+                  How does attention define our cognitive functions?
+                </p>
+                
+                {/* Author Info */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg">
                     MH
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-1">Masud Husain</h3>
-                    <p className="text-sm text-gray-400 mb-2">Professor of Neurology and Cognitive Neuroscience at Oxford</p>
+                    <h3 className="text-lg font-semibold text-white mb-1">Masud Husain</h3>
+                    <p className="text-xs text-gray-400">Professor of Neurology and Cognitive Neuroscience at Oxford</p>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-3">How Do We Understand Attention?</h4>
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  How does attention define our cognitive functions?
-                </p>
+                
+                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full border border-orange-500/30">Attention</span>
                   <span className="px-3 py-1 bg-red-500/20 text-red-300 text-xs rounded-full border border-red-500/30">Cognition</span>
@@ -456,20 +477,27 @@ export default function Home() {
 
             {/* Anil Seth Interview */}
             <div className="animate-fade-in-delay" style={{ animationDelay: '0.3s' }}>
-              <div className="glass-card glass-card-hover p-6 h-full">
-                <div className="flex items-start space-x-4 mb-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+              <div className="glass-card glass-card-hover p-6 h-full flex flex-col">
+                {/* Article Title */}
+                <h4 className="text-xl font-semibold text-white mb-4 leading-tight">Is Consciousness a Controlled Hallucination?</h4>
+                
+                {/* Summary */}
+                <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
+                  Is it possible for us to fully understand consciousness?
+                </p>
+                
+                {/* Author Info */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg">
                     AS
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-1">Anil Seth</h3>
-                    <p className="text-sm text-gray-400 mb-2">Professor of Cognitive and Computational Neuroscience at the University of Sussex</p>
+                    <h3 className="text-lg font-semibold text-white mb-1">Anil Seth</h3>
+                    <p className="text-xs text-gray-400">Professor of Cognitive and Computational Neuroscience at the University of Sussex</p>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-3">Is Consciousness a Controlled Hallucination?</h4>
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  Is it possible for us to fully understand consciousness?
-                </p>
+                
+                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full border border-indigo-500/30">Consciousness</span>
                   <span className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30">Philosophy</span>
