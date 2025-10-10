@@ -369,6 +369,128 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Exclusive Dialogues Section */}
+      <Section>
+        <div className="container-custom">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl lg:text-5xl font-mono-display mb-6">
+              <span className="gradient-text">Exclusive Dialogues</span>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-futura-1">
+              Original interviews you won't find elsewhere — featuring pioneering scholars in neuroscience, AI, and the human sciences.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {/* Ed Boyden Interview */}
+            <div className="animate-fade-in-delay" style={{ animationDelay: '0s' }}>
+              <div className="glass-card glass-card-hover p-6 h-full">
+                <div className="flex items-start space-x-4 mb-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                    EB
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-1">Ed Boyden</h3>
+                    <p className="text-sm text-gray-400 mb-2">麻省理工学院(MIT) Y. Eva Tan神经技术教授</p>
+                  </div>
+                </div>
+                <h4 className="text-lg font-semibold text-white mb-3">大脑如何产生思想？</h4>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  新技术如何帮助我们更好地理解大脑？
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30">Neuroscience</span>
+                  <span className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30">Technology</span>
+                  <span className="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30">Brain Research</span>
+                </div>
+              </div>
+            </div>
+
+            {/* David Poeppel Interview */}
+            <div className="animate-fade-in-delay" style={{ animationDelay: '0.1s' }}>
+              <div className="glass-card glass-card-hover p-6 h-full">
+                <div className="flex items-start space-x-4 mb-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                    DP
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-1">David Poeppel</h3>
+                    <p className="text-sm text-gray-400 mb-2">纽约大学心理学和神经科学教授</p>
+                  </div>
+                </div>
+                <h4 className="text-lg font-semibold text-white mb-3">大脑如何理解语言？</h4>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  为言语处理构建模型。
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full border border-green-500/30">Linguistics</span>
+                  <span className="px-3 py-1 bg-teal-500/20 text-teal-300 text-xs rounded-full border border-teal-500/30">Language</span>
+                  <span className="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full border border-emerald-500/30">Cognition</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Masud Husain Interview */}
+            <div className="animate-fade-in-delay" style={{ animationDelay: '0.2s' }}>
+              <div className="glass-card glass-card-hover p-6 h-full">
+                <div className="flex items-start space-x-4 mb-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                    MH
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-1">Masud Husain</h3>
+                    <p className="text-sm text-gray-400 mb-2">牛津大学神经病学和认知神经科学教授</p>
+                  </div>
+                </div>
+                <h4 className="text-lg font-semibold text-white mb-3">我们如何理解注意力？</h4>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  注意力如何定义我们的认知功能？
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full border border-orange-500/30">Attention</span>
+                  <span className="px-3 py-1 bg-red-500/20 text-red-300 text-xs rounded-full border border-red-500/30">Cognition</span>
+                  <span className="px-3 py-1 bg-amber-500/20 text-amber-300 text-xs rounded-full border border-amber-500/30">Neuroscience</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Anil Seth Interview */}
+            <div className="animate-fade-in-delay" style={{ animationDelay: '0.3s' }}>
+              <div className="glass-card glass-card-hover p-6 h-full">
+                <div className="flex items-start space-x-4 mb-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                    AS
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-1">Anil Seth</h3>
+                    <p className="text-sm text-gray-400 mb-2">Professor of Cognitive and Computational Neuroscience at the University of Sussex</p>
+                  </div>
+                </div>
+                <h4 className="text-lg font-semibold text-white mb-3">意识是受控的幻觉？</h4>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  我们有可能彻底理解意识吗？
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full border border-indigo-500/30">Consciousness</span>
+                  <span className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30">Philosophy</span>
+                  <span className="px-3 py-1 bg-violet-500/20 text-violet-300 text-xs rounded-full border border-violet-500/30">Mind</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/interviews"
+              className="inline-flex items-center space-x-2 px-8 py-4 rounded-xl glass-card glass-card-hover text-white font-semibold transition-all duration-300 font-futura-1"
+            >
+              <span>View All Interviews</span>
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </Section>
+
       {/* Why Learn With Us Section */}
       <Section>
         <div className="container-custom">
