@@ -9,73 +9,6 @@ import FieldsWeExplore from '@/components/FieldsWeExplore'
 import { Brain, Zap, Users, Award, Quote, Star, ArrowRight, ArrowUpRight, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { useState, useEffect, useRef } from 'react'
-
-// DecryptingText component for fast character-by-character decryption effect with scroll trigger
-function DecryptingText({ text, highlightedWords = [] }: { text: string, highlightedWords?: Array<{ word: string, color: string }> }) {
-  const [displayedText, setDisplayedText] = useState('')
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
-  const textRef = useRef<HTMLDivElement>(null)
-
-  const glitchChars = '!@#$%^&*()_+-=[]{}|;:,.<>?~`0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-
-  // Intersection Observer for scroll trigger
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.3 }
-    )
-
-    if (textRef.current) {
-      observer.observe(textRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    if (isVisible && currentIndex < text.length) {
-      const timer = setTimeout(() => {
-        // Show glitch character first
-        const glitchChar = glitchChars[Math.floor(Math.random() * glitchChars.length)]
-        setDisplayedText(prev => prev + glitchChar)
-        
-        // Then show the correct character after a very short delay
-        setTimeout(() => {
-          setDisplayedText(prev => {
-            const withoutGlitch = prev.slice(0, -1)
-            return withoutGlitch + text[currentIndex]
-          })
-          setCurrentIndex(currentIndex + 1)
-        }, 10) // Very fast decryption
-      }, 5) // Very fast character interval
-
-      return () => clearTimeout(timer)
-    }
-  }, [isVisible, currentIndex, text])
-
-  const renderText = () => {
-    let result = displayedText
-    let lastIndex = 0
-
-    // Apply highlighting to specific words
-    highlightedWords.forEach(({ word, color }) => {
-      // Escape special regex characters and use a more flexible pattern
-      const escapedWord = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-      const regex = new RegExp(`(${escapedWord})`, 'gi')
-      result = result.replace(regex, `<span class="bg-gradient-to-r ${color} bg-clip-text text-transparent">$1</span>`)
-    })
-
-    return <span ref={textRef} dangerouslySetInnerHTML={{ __html: result }} />
-  }
-
-  return renderText()
-}
 
 export default function Home() {
   // Sample data for courses
@@ -395,8 +328,12 @@ export default function Home() {
                 
                 {/* Author Info */}
                 <div className="flex items-center space-x-4 p-6 pb-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg">
-                    EB
+                  <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-lg">
+                    <img 
+                      src="/EdBoyden.png" 
+                      alt="Ed Boyden" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white mb-1">Ed Boyden</h3>
@@ -407,7 +344,7 @@ export default function Home() {
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
                   {/* Summary */}
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4 flex-grow">
+                  <p className="text-gray-300 text-base leading-relaxed mb-4 flex-grow">
                     How can new technologies help us better understand the brain?
                   </p>
                   
@@ -439,8 +376,12 @@ export default function Home() {
                 
                 {/* Author Info */}
                 <div className="flex items-center space-x-4 p-6 pb-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg">
-                    DP
+                  <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-lg">
+                    <img 
+                      src="/DavidPoeppel.png" 
+                      alt="David Poeppel" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white mb-1">David Poeppel</h3>
@@ -451,7 +392,7 @@ export default function Home() {
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
                   {/* Summary */}
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4 flex-grow">
+                  <p className="text-gray-300 text-base leading-relaxed mb-4 flex-grow">
                     Building models for speech processing.
                   </p>
                   
@@ -483,8 +424,12 @@ export default function Home() {
                 
                 {/* Author Info */}
                 <div className="flex items-center space-x-4 p-6 pb-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg">
-                    MH
+                  <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-lg">
+                    <img 
+                      src="/MasudHusain.png" 
+                      alt="Masud Husain" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white mb-1">Masud Husain</h3>
@@ -495,7 +440,7 @@ export default function Home() {
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
                   {/* Summary */}
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4 flex-grow">
+                  <p className="text-gray-300 text-base leading-relaxed mb-4 flex-grow">
                     How does attention define our cognitive functions?
                   </p>
                   
@@ -527,8 +472,12 @@ export default function Home() {
                 
                 {/* Author Info */}
                 <div className="flex items-center space-x-4 p-6 pb-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg">
-                    AS
+                  <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-lg">
+                    <img 
+                      src="/AnilSeth.png" 
+                      alt="Anil Seth" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white mb-1">Anil Seth</h3>
@@ -539,7 +488,7 @@ export default function Home() {
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
                   {/* Summary */}
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4 flex-grow">
+                  <p className="text-gray-300 text-base leading-relaxed mb-4 flex-grow">
                     Is it possible for us to fully understand consciousness?
                   </p>
                   
@@ -614,11 +563,11 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4 pt-4">
                   <div className="text-center">
                     <div className="text-2xl font-futura-1 text-indigo-400">500+</div>
-                    <div className="text-sm text-gray-400">Alumni</div>
+                    <div className="text-base text-gray-400">Alumni</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-futura-1 text-purple-400">50+</div>
-                    <div className="text-sm text-gray-400">Countries</div>
+                    <div className="text-base text-gray-400">Countries</div>
                   </div>
                 </div>
               </div>
@@ -652,13 +601,13 @@ export default function Home() {
                 <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400 flex items-center justify-center">
-                    <span className="text-white font-semibold text-sm">
+                    <span className="text-white font-semibold text-base">
                       {testimonial.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
                   <div>
                     <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-sm text-gray-400">{testimonial.role}</div>
+                    <div className="text-base text-gray-400">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
@@ -960,9 +909,9 @@ export default function Home() {
                   <div className="absolute bottom-4 left-4 right-4 p-6 bg-black/60 backdrop-blur-lg border border-white/20 rounded-2xl">
                     <div className="flex items-center space-x-3 mb-3">
                       <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse" />
-                      <span className="text-sm font-mono-display text-white/80">Live Network</span>
+                      <span className="text-base font-mono-display text-white/80">Live Network</span>
                     </div>
-                    <h3 className="text-sm md:text-2xl font-mono-display text-white mb-2">
+                    <h3 className="text-base md:text-2xl font-mono-display text-white mb-2">
                       <span className="gradient-text">1M+</span> Active Minds
                     </h3>
                   </div>
@@ -983,16 +932,56 @@ export default function Home() {
                   
                   <div className="relative">
                     <p className="text-lg text-gray-300 leading-relaxed font-futura-1">
-                      <DecryptingText 
-                        text="Inside Noetex Academy, you enter a living neural network of over one million minds — readers, creators, and thinkers shaping new dialogues between science, philosophy, and technology. Here, ideas flow freely, collaborations emerge organically, and imagination meets rigor. As part of the community, you can become a Neu-Reality contributor — joining 400+ volunteers from leading universities and institutions to build projects that bridge research, storytelling, and innovation. Together, we turn understanding into creation, and knowledge into reality."
-                        highlightedWords={[
-                          { word: "Noetex Academy", color: "from-indigo-400 to-purple-400" },
-                          { word: "one million minds", color: "from-blue-400 to-cyan-300" },
-                          { word: "Neu-Reality contributor", color: "from-purple-400 to-pink-400" },
-                          { word: "400+ volunteers", color: "from-cyan-400 to-blue-400" }
-                        ]}
-                      />
+                      Inside <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Noetex Academy</span>, you enter a living neural network of over <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">one million minds</span> — readers, creators, and thinkers shaping new dialogues between science, philosophy, and technology. Here, ideas flow freely, collaborations emerge organically, and imagination meets rigor. As part of the community, you can become a <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Neu-Reality contributor</span> — joining <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">400+ volunteers</span> from leading universities and institutions to build projects that bridge research, storytelling, and innovation. Together, we turn understanding into creation, and knowledge into reality.
                     </p>
+                  </div>
+                  
+                  {/* Our Trusted Collaborators */}
+                  <div className="mt-12">
+                    <div className="flex items-center mb-8">
+                      <h3 className="text-xl font-space-grotesk text-white">
+                        Our Trusted Collaborators
+                      </h3>
+                      <div className="ml-4 flex space-x-1">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                        <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                      </div>
+                    </div>
+                    
+                    {/* Static Logo Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/Wiley.svg" alt="Wiley" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/ByteDance.svg" alt="ByteDance" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/Tencent.svg" alt="Tencent" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/Frontiers.svg" alt="Frontiers" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/Cell Press.svg" alt="Cell Press" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/Qwen.svg" alt="Qwen" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/AntGroup.svg" alt="AntGroup" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/BerggruenInstitute.svg" alt="Berggruen Institute" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/ScientificAmerican.svg" alt="Scientific American" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                      <div className="flex items-center justify-center w-full h-24 bg-white/10 rounded-lg backdrop-blur-sm">
+                        <img src="/logos/ZhenFund.svg" alt="ZhenFund" className="h-16 w-full filter brightness-0 invert" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
